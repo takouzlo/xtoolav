@@ -1,272 +1,1367 @@
-# French translations for mttools.
-# Copyright (C) 2025 Arno
-# This file is distributed under the same license as the mttools project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+# French translations for xtoolav.
+# Copyright (C) 2025 Fal
+# This file is distributed under the same license as the xtoolav project.
+# FIRST AUTHOR <f.bfalik@gmail.com>, 2025.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: mttools 1.0\n"
-"Report-Msgid-Bugs-To: arno@entreprise.de\n"
-"POT-Creation-Date: 2025-04-05 10:00+0100\n"
-"PO-Revision-Date: 2025-04-05 10:00+0100\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Project-Id-Version: xtoolav 1.0\n"
+"Report-Msgid-Bugs-To: f.bfalik@gmail.com\n"
+"POT-Creation-Date: 2025-10-17 12:11+0200\n"
+"PO-Revision-Date: 2025-10-17 12:00+0200\n"
+"Last-Translator: Fal <f.bfalik@gmail.com>\n"
 "Language: fr\n"
-"Language-Team: fr <LL@li.org>\n"
+"Language-Team: fr <f.bfalik@gmail.com>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.14.0\n"
 
-#: app.py:28
+#: app.py:37
 msgid "Bitte melden Sie sich an, um fortzufahren."
 msgstr "Veuillez vous connecter pour continuer."
 
-#: app.py:75
+#: app.py:114
 msgid "Erfolgreich eingeloggt!"
 msgstr "Connecté avec succès !"
 
-#: app.py:77
+#: app.py:117
 msgid "Benutzername oder Passwort falsch."
 msgstr "Nom d'utilisateur ou mot de passe incorrect."
 
-#: app.py:96
-msgid "Registrierung erfolgreich! Sie können sich jetzt anmelden."
-msgstr "Inscription réussie ! Vous pouvez maintenant vous connecter."
-
-#: app.py:103
+#: app.py:130
 msgid "Benutzername bereits vergeben."
 msgstr "Nom d'utilisateur déjà pris."
 
-#: app.py:106
+#: app.py:134
 msgid "E-Mail bereits registriert."
-msgstr "E-mail déjà enregistré."
+msgstr "Email déjà enregistrée."
 
-#: app.py:118
+#: app.py:142
+msgid "Registrierung erfolgreich! Sie können sich jetzt anmelden."
+msgstr "Inscription réussie ! Vous pouvez maintenant vous connecter."
+
+#: app.py:152
 msgid "Sie wurden erfolgreich abgemeldet."
 msgstr "Vous avez été déconnecté avec succès."
 
-#: templates/base.html:18
-msgid "Dashboard"
-msgstr "Tableau de bord"
-
-#: templates/base.html:19
-msgid "Abmelden"
-msgstr "Se déconnecter"
-
-#: templates/dashboard.html:3
-msgid "Willkommen bei mttools"
-msgstr "Bienvenue sur mttools"
-
-#: templates/dashboard.html:4
-msgid "Ihr Werkzeugkasten für AV-Installationen in Konferenzräumen."
-msgstr "Votre boîte à outils pour les installations audiovisuelles en salles de conférence."
-
-#: templates/dashboard.html:9
+#: app.py:161
 msgid "Konverter"
 msgstr "Convertisseur"
 
-#: templates/dashboard.html:10
+#: app.py:162
 msgid "Auflösungen, Kabel, NDI-Bandbreite"
 msgstr "Résolutions, câbles, bande passante NDI"
 
-#: templates/dashboard.html:14
+#: app.py:167
 msgid "Audio-Rechner"
 msgstr "Calculateur audio"
 
-#: templates/dashboard.html:15
+#: app.py:168
 msgid "dB, Lautstärke, Empfindlichkeit"
 msgstr "dB, volume, sensibilité"
 
-#: templates/dashboard.html:19
+#: app.py:173
 msgid "Pinouts"
 msgstr "Brochages"
 
-#: templates/dashboard.html:20
+#: app.py:174
 msgid "XLR, RJ45, BNC Belegung"
-msgstr "Brochages XLR, RJ45, BNC"
+msgstr "Connecteurs XLR, RJ45, BNC"
 
-#: templates/converter.html:2
-msgid "AV-Konverter & Bandbreite"
-msgstr "Convertisseur AV et bande passante"
+#: app.py:179
+msgid "Stromrechner"
+msgstr "Calculateur de courant"
 
-#: templates/converter.html:3
-msgid "Hilfe bei HDMI, NDI und Kabeln für Konferenzräume."
-msgstr "Aide pour HDMI, NDI et câbles en salles de conférence."
+#: app.py:180
+msgid "Strom, Sicherung, Kabelquerschnitt"
+msgstr "Courant, fusible, section de câble"
 
-#: templates/converter.html:38
-msgid "Für 4K60 benötigen Sie HDMI 2.0 oder höher und zertifiziertes Kabel (High Speed)."
-msgstr "Pour du 4K60, vous avez besoin d'HDMI 2.0 ou supérieur et d'un câble certifié (High Speed)."
-
-#: templates/converter.html:49
-msgid "Tipp:"
-msgstr "Astuce :"
-
-#: templates/converter.html:50
-msgid "Immer Shielded (S/FTP) in industriellen Umgebungen verwenden."
-msgstr "Utilisez toujours du câble blindé (S/FTP) en environnement industriel."
-
-#: templates/audio.html:2
-msgid "Audio-Rechner (dB)"
-msgstr "Calculateur audio (dB)"
-
-#: templates/audio.html:3
-msgid "Berechnen Sie den Schalldruckpegel (SPL) basierend auf Lautsprecherleistung und Entfernung."
-msgstr "Calculez le niveau sonore (SPL) selon la puissance de l'enceinte et la distance."
-
-#: templates/audio.html:11
-msgid "Sensibilität (dB/W/m)"
-msgstr "Sensibilité (dB/W/m)"
-
-#: templates/audio.html:15
-msgid "Leistung (W)"
-msgstr "Puissance (W)"
-
-#: templates/audio.html:19
-msgid "Entfernung (m)"
-msgstr "Distance (m)"
-
-#: templates/audio.html:22
-msgid "Berechnen"
-msgstr "Calculer"
-
-#: templates/audio.html:22
-msgid "Berechnen"
-msgstr "Calculer"
-
-#: templates/audio.html:39
-msgid "Referenzwerte:"
-msgstr "Niveaux de référence :"
-
-msgid "Flüstern"
-msgstr "Chuchotement"
-
-msgid "Gespräch"
-msgstr "Conversation"
-
-msgid "Längerer Schutz notwendig"
-msgstr "Protection longue durée nécessaire"
-
-msgid "Konzert"
-msgstr "Concert"
-
-msgid "Schmerzgrenze"
-msgstr "Seuil de douleur"
-
-msgid "Stromrechner (Leistung → Strom)"
-msgstr "Calculateur de courant (Puissance → Courant)"
-
-msgid "Berechnen Sie den Stromverbrauch, Kabelquerschnitt und Sicherung für AV-Geräte."
-msgstr "Calculez la consommation, la section de câble et la protection pour les équipements AV."
-
-msgid "Phasen"
-msgstr "Phases"
-
-msgid "Einphasig (230V)"
-msgstr "Monophasé (230V)"
-
-msgid "Dreiphasig (400V)"
-msgstr "Triphasé (400V)"
-
-msgid "Ergebnis:"
-msgstr "Résultat :"
-
-msgid "Strom:"
-msgstr "Courant :"
-
-msgid "Typ:"
-msgstr "Type :"
-
-msgid "Sicherung:"
-msgstr "Fusible :"
-
-msgid "Kabel:"
-msgstr "Câble :"
-
-msgid "Hinweise:"
-msgstr "Remarques :"
-
-
-msgid "PoE-Leistungsrechner"
+#: app.py:185
+msgid "PoE-Rechner"
 msgstr "Calculateur PoE"
 
-msgid "Wie viele Geräte können über Power over Ethernet (PoE) betrieben werden?"
-msgstr "Combien d'appareils peuvent être alimentés en PoE ?"
+#: app.py:186
+msgid "Power over Ethernet (Kamera, Telefon)"
+msgstr "Alimentation par Ethernet (caméra, téléphone)"
 
-msgid "Switch-Typ / Gesamtleistung"
-msgstr "Type de switch / Puissance totale"
+#: app.py:191 app.py:525
+msgid "Sichtabstand"
+msgstr "Distance de vision"
 
-msgid "Gerätetyp"
-msgstr "Type d'appareil"
+#: app.py:192
+msgid "Optimale Distanz für 1080p, 4K, 8K"
+msgstr "Distance optimale pour 1080p, 4K, 8K"
 
-msgid "Benutzerdefiniert"
-msgstr "Personnalisé"
+#: app.py:197
+msgid "Bilddiagonalen"
+msgstr "Diagonales d'écran"
 
-msgid "Eigene Leistung (W)"
-msgstr "Puissance personnalisée (W)"
-
-msgid "Verfügbar:"
-msgstr "Disponible :"
-
-msgid "Anzahl Geräte:"
-msgstr "Nombre d'appareils :"
-
-msgid "Sichtabstand-Rechner"
-msgstr "Calculateur de distance de vision"
-
-msgid "Optimale Sehdistanz für Monitore und Projektionsflächen."
-msgstr "Distance optimale pour écrans et surfaces de projection."
-
-msgid "Bildschirmgröße (Zoll)"
-msgstr "Taille de l'écran (pouces)"
-
-msgid "Empfohlener Sichtabstand:"
-msgstr "Distance de vision recommandée :"
-
-msgid "Min:"
-msgstr "Min :"
-
-msgid "Ideal:"
-msgstr "Idéal :"
-
-msgid "Max:"
-msgstr "Max :"
-
-msgid "Richtlinien:"
-msgstr "Recommandations :"
-
-msgid "Bilddiagonalen-Rechner"
-msgstr "Calculateur de taille d'écran"
-
-msgid "Berechnen Sie Breite, Höhe und Diagonale von Bildschirmen und Projektionsflächen."
-msgstr "Calculez largeur, hauteur et diagonale des écrans et surfaces de projection."
-
-msgid "Seitenverhältnis"
-msgstr "Format d'image"
-
-msgid "Diagonale"
-msgstr "Diagonale"
-
-msgid "Breite"
-msgstr "Largeur"
-
-msgid "Höhe"
-msgstr "Hauteur"
-
-msgid "Berechnen"
-msgstr "Calculer"
-
-msgid "Zurücksetzen"
-msgstr "Réinitialiser"
-
-msgid "Ergebnis:"
-msgstr "Résultat :"
-
-msgid "Bitte geben Sie einen Wert ein."
-msgstr "Veuillez entrer une valeur."
-
+#: app.py:198
 msgid "Umrechnung cm/Zoll, Breite/Höhe"
 msgstr "Conversion cm/pouces, largeur/hauteur"
 
+#: app.py:203 templates/netzwerktest.html:3
+msgid "Netzwerktest"
+msgstr "Test réseau"
+
+#: app.py:204
+msgid "Ping und Port-Prüfung"
+msgstr "Ping et vérification de port"
+
+#: app.py:210
+msgid "Kanäle für kabellose Mikrofone"
+msgstr "Canaux pour micros sans fil"
+
+#: app.py:215 app.py:648
+msgid "Projektion"
+msgstr "Projection"
+
+#: app.py:216
+msgid "Projektionsdistanz berechnen"
+msgstr "Calculer la distance de projection"
+
+#: app.py:222
+msgid "Audio-Niveau-Konvertierung"
+msgstr "Conversion niveaux audio"
+
+#: app.py:227 app.py:724
+msgid "Wärme"
+msgstr "Chaleur"
+
+#: app.py:228
+msgid "Wärmeabgabe von Geräten"
+msgstr "Déperdition thermique des appareils"
+
+#: app.py:233 templates/netzwerk_scanner.html:3
+msgid "Netzwerk-Scanner"
+msgstr "Analyseur réseau"
+
+#: app.py:234
+msgid "IP, MAC, Hostname finden"
+msgstr "Trouver IP, MAC, nom d'hôte"
+
+#: app.py:239 app.py:809 templates/ascii_decoder.html:3
+msgid "ASCII-Decodierer"
+msgstr "Décodeur ASCII"
+
+#: app.py:240
+msgid "DEC, HEX, OCT, HTML Entity"
+msgstr "DÉC, HEX, OCT, entité HTML"
+
+#: app.py:246
+msgid "Erkennen und verwalten Sie Dante-Geräte"
+msgstr "Détecter et gérer les périphériques Dante"
+
+#: app.py:276
+#, python-format
+msgid ""
+"Geschätzte Bandbreite: <strong>%.0f Mbps</strong><br>Empfohlenes "
+"Netzwerk: <strong>Gigabit-Ethernet</strong><br>Für 4 Kameras "
+"gleichzeitig: <strong>10GbE oder VLANs erwägen</strong>"
+msgstr ""
+
+#: app.py:306
+#, fuzzy
+msgid "Leise – gut für Besprechungen"
+msgstr "Derniers calculs"
+
+#: app.py:308
+msgid "Mittel – normale Konferenz"
+msgstr ""
+
+#: app.py:310
+msgid "Laut – Vorträge, Events"
+msgstr ""
+
+#: app.py:312
+msgid "Sehr laut – Schutz empfohlen"
+msgstr ""
+
+#: app.py:314
+msgid "Gefährlich – Gehörschutz erforderlich!"
+msgstr ""
+
+#: app.py:318
+msgid "Audio"
+msgstr ""
+
+#: app.py:323 app.py:486 app.py:531 app.py:653 app.py:729
+msgid "Fehler bei der Berechnung."
+msgstr "Erreur lors du calcul."
+
+#: app.py:338
+msgid "Ungültige Sprache"
+msgstr "Langue invalide"
+
+#: app.py:351
+msgid "Sprache auf {lang} geändert"
+msgstr "Langue changée en {lang}"
+
+#: app.py:365
+msgid "Technische Konfiguration"
+msgstr "Configuration technique"
+
+#: app.py:378
+msgid "wkhtmltopdf nicht gefunden. PDF-Export deaktiviert."
+msgstr ""
+
+#: app.py:385
+#, fuzzy
+msgid "Fehler beim PDF-Export: "
+msgstr "Erreur lors de la conversion."
+
+#: app.py:401 app.py:426
+#, fuzzy
+msgid "Einphasig"
+msgstr "Monophasé (230V)"
+
+#: app.py:404 app.py:426
+#, fuzzy
+msgid "Dreiphasig"
+msgstr "Triphasé (400V)"
+
+#: app.py:428
+#, fuzzy
+msgid "Strom"
+msgstr "Courant :"
+
+#: app.py:433
+#, fuzzy
+msgid "Fehler bei der Berechnung. Bitte gültige Werte eingeben."
+msgstr "Erreur lors du calcul."
+
+#: app.py:443
+msgid "IP-Telefon"
+msgstr ""
+
+#: app.py:444
+msgid "IP-Kamera"
+msgstr ""
+
+#: app.py:445
+msgid "PTZ-Kamera"
+msgstr ""
+
+#: app.py:446
+msgid "Wireless AP"
+msgstr ""
+
+#: app.py:447
+msgid "4K-NDI-Kamera"
+msgstr ""
+
+#: app.py:448 templates/poe.html:30
+#, fuzzy
+msgid "Benutzerdefiniert"
+msgstr "Utilisateur"
+
+#: app.py:473
+msgid "Nicht genug Leistung für dieses Gerät."
+msgstr ""
+
+#: app.py:475
+msgid "Achtung: Fast volle Auslastung. Risiko bei Peak-Last."
+msgstr ""
+
+#: app.py:480
+msgid "PoE"
+msgstr ""
+
+#: app.py:527
+#, python-format
+msgid "Min: %(min)s m, Ideal: %(ideal)s m, Max: %(max)s m"
+msgstr ""
+
+#: app.py:599 templates/netzwerk_scanner.html:8
+msgid "Netzwerk"
+msgstr "Réseau"
+
+#: app.py:696
+#, fuzzy
+msgid "Audio-Niveau"
+msgstr "Conversion niveaux audio"
+
+#: app.py:701
+msgid "Fehler bei der Konvertierung."
+msgstr "Erreur lors de la conversion."
+
+#: app.py:757
 msgid "Bildschirmgröße"
-msgstr "Taille écran"
+msgstr ""
+
+#: app.py:772
+msgid "Bitte geben Sie genau ein Zeichen ein."
+msgstr "Veuillez entrer un seul caractère"
+
+#: app.py:796
+msgid "Unbenannt"
+msgstr "Sans nom"
+
+#: app.py:845
+msgid ""
+"Fehler beim Lesen der JSON-Daten. Prüfen Sie die Ausgabe von dante-"
+"discover."
+msgstr ""
+
+#: app.py:847
+msgid "Keine Geräte gefunden oder dante-discover nicht installiert."
+msgstr ""
+
+#: app.py:849
+msgid "❌ dante-discover nicht gefunden. Installieren Sie Dante Controller."
+msgstr ""
+
+#: app.py:851
+msgid "Zeitüberschreitung bei der Netzwerkprüfung."
+msgstr ""
+
+#: app.py:926
+msgid "Bitte Netzwerk auswählen oder eingeben."
+msgstr "Veuillez choisir ou saisir un réseau."
+
+#: app.py:935
+msgid "Ungültiges Format. Beispiel: 192.168.1.0/24"
+msgstr "Format invalide. Exemple : 192.168.1.0/24"
+
+#: menv/lib/python3.12/site-packages/click/_termui_impl.py:608
+msgid "{editor}: Editing failed"
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/click/_termui_impl.py:612
+msgid "{editor}: Editing failed: {e}"
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/click/core.py:1104
+#: menv/lib/python3.12/site-packages/click/core.py:1141
+msgid "{text} {deprecated_message}"
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/click/core.py:1160
+msgid "Options"
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/click/core.py:1224
+msgid "Got unexpected extra argument ({args})"
+msgid_plural "Got unexpected extra arguments ({args})"
+msgstr[0] ""
+msgstr[1] ""
+
+#: menv/lib/python3.12/site-packages/click/core.py:1240
+msgid "DeprecationWarning: The command {name!r} is deprecated.{extra_message}"
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/click/core.py:1425
+msgid "Aborted!"
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/click/core.py:1799
+msgid "Commands"
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/click/core.py:1830
+msgid "Missing command."
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/click/core.py:1908
+msgid "No such command {name!r}."
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/click/core.py:2332
+msgid "Value must be an iterable."
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/click/core.py:2357
+msgid "Takes {nargs} values but 1 was given."
+msgid_plural "Takes {nargs} values but {len} were given."
+msgstr[0] ""
+msgstr[1] ""
+
+#: menv/lib/python3.12/site-packages/click/core.py:2504
+msgid ""
+"DeprecationWarning: The {param_type} {name!r} is "
+"deprecated.{extra_message}"
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/click/core.py:2956
+msgid "env var: {var}"
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/click/core.py:2959
+msgid "default: {default}"
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/click/core.py:2963
+msgid "required"
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/click/core.py:3023
+msgid "(dynamic)"
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/click/decorators.py:465
+#, python-format
+msgid "%(prog)s, version %(version)s"
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/click/decorators.py:522
+msgid "Show the version and exit."
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/click/decorators.py:548
+msgid "Show this message and exit."
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/click/exceptions.py:50
+#: menv/lib/python3.12/site-packages/click/exceptions.py:89
+msgid "Error: {message}"
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/click/exceptions.py:81
+msgid "Try '{command} {option}' for help."
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/click/exceptions.py:130
+msgid "Invalid value: {message}"
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/click/exceptions.py:132
+msgid "Invalid value for {param_hint}: {message}"
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/click/exceptions.py:190
+msgid "Missing argument"
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/click/exceptions.py:192
+msgid "Missing option"
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/click/exceptions.py:194
+msgid "Missing parameter"
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/click/exceptions.py:196
+msgid "Missing {param_type}"
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/click/exceptions.py:203
+msgid "Missing parameter: {param_name}"
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/click/exceptions.py:223
+msgid "No such option: {name}"
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/click/exceptions.py:237
+msgid "Did you mean {possibility}?"
+msgid_plural "(Possible options: {possibilities})"
+msgstr[0] ""
+msgstr[1] ""
+
+#: menv/lib/python3.12/site-packages/click/exceptions.py:282
+msgid "unknown error"
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/click/exceptions.py:289
+msgid "Could not open file {filename!r}: {message}"
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/click/formatting.py:156
+msgid "Usage:"
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/click/parser.py:199
+msgid "Argument {name!r} takes {nargs} values."
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/click/parser.py:381
+msgid "Option {name!r} does not take a value."
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/click/parser.py:443
+msgid "Option {name!r} requires an argument."
+msgid_plural "Option {name!r} requires {nargs} arguments."
+msgstr[0] ""
+msgstr[1] ""
+
+#: menv/lib/python3.12/site-packages/click/shell_completion.py:331
+msgid "Shell completion is not supported for Bash versions older than 4.4."
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/click/shell_completion.py:339
+msgid "Couldn't detect Bash version, shell completion is not supported."
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/click/termui.py:162
+msgid "Repeat for confirmation"
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/click/termui.py:178
+msgid "Error: The value you entered was invalid."
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/click/termui.py:180
+msgid "Error: {e.message}"
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/click/termui.py:191
+msgid "Error: The two entered values do not match."
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/click/termui.py:247
+msgid "Error: invalid input"
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/click/termui.py:866
+msgid "Press any key to continue..."
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/click/types.py:332
+msgid ""
+"Choose from:\n"
+"\t{choices}"
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/click/types.py:371
+msgid "{value!r} is not {choice}."
+msgid_plural "{value!r} is not one of {choices}."
+msgstr[0] ""
+msgstr[1] ""
+
+#: menv/lib/python3.12/site-packages/click/types.py:462
+msgid "{value!r} does not match the format {format}."
+msgid_plural "{value!r} does not match the formats {formats}."
+msgstr[0] ""
+msgstr[1] ""
+
+#: menv/lib/python3.12/site-packages/click/types.py:482
+msgid "{value!r} is not a valid {number_type}."
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/click/types.py:538
+msgid "{value} is not in the range {range}."
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/click/types.py:718
+msgid "{value!r} is not a valid boolean. Recognized values: {states}"
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/click/types.py:747
+msgid "{value!r} is not a valid UUID."
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/click/types.py:937
+msgid "file"
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/click/types.py:939
+msgid "directory"
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/click/types.py:941
+msgid "path"
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/click/types.py:988
+msgid "{name} {filename!r} does not exist."
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/click/types.py:997
+msgid "{name} {filename!r} is a file."
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/click/types.py:1005
+msgid "{name} {filename!r} is a directory."
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/click/types.py:1014
+msgid "{name} {filename!r} is not readable."
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/click/types.py:1023
+msgid "{name} {filename!r} is not writable."
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/click/types.py:1032
+msgid "{name} {filename!r} is not executable."
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/click/types.py:1098
+msgid "{len_type} values are required, but {len_value} was given."
+msgid_plural "{len_type} values are required, but {len_value} were given."
+msgstr[0] ""
+msgstr[1] ""
+
+#: menv/lib/python3.12/site-packages/flask_wtf/file.py:55
+#: menv/lib/python3.12/site-packages/wtforms/validators.py:293
+#: menv/lib/python3.12/site-packages/wtforms/validators.py:323
+msgid "This field is required."
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/flask_wtf/file.py:93
+msgid "File does not have an approved extension: {extensions}"
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/flask_wtf/file.py:101
+msgid "File does not have an approved extension."
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/flask_wtf/file.py:140
+msgid "File must be between {min_size} and {max_size} bytes."
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/passlib/ext/django/utils.py:1000
+msgid "algorithm"
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/wtforms/validators.py:86
+#, python-format
+msgid "Invalid field name '%s'."
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/wtforms/validators.py:99
+#, python-format
+msgid "Field must be equal to %(other_name)s."
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/wtforms/validators.py:145
+#, python-format
+msgid "Field must be at least %(min)d character long."
+msgid_plural "Field must be at least %(min)d characters long."
+msgstr[0] ""
+msgstr[1] ""
+
+#: menv/lib/python3.12/site-packages/wtforms/validators.py:151
+#, python-format
+msgid "Field cannot be longer than %(max)d character."
+msgid_plural "Field cannot be longer than %(max)d characters."
+msgstr[0] ""
+msgstr[1] ""
+
+#: menv/lib/python3.12/site-packages/wtforms/validators.py:157
+#, python-format
+msgid "Field must be exactly %(max)d character long."
+msgid_plural "Field must be exactly %(max)d characters long."
+msgstr[0] ""
+msgstr[1] ""
+
+#: menv/lib/python3.12/site-packages/wtforms/validators.py:163
+#, python-format
+msgid "Field must be between %(min)d and %(max)d characters long."
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/wtforms/validators.py:216
+#, python-format
+msgid "Number must be at least %(min)s."
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/wtforms/validators.py:219
+#, python-format
+msgid "Number must be at most %(max)s."
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/wtforms/validators.py:222
+#, python-format
+msgid "Number must be between %(min)s and %(max)s."
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/wtforms/validators.py:358
+msgid "Invalid input."
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/wtforms/validators.py:422
+msgid "Invalid email address."
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/wtforms/validators.py:460
+msgid "Invalid IP address."
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/wtforms/validators.py:503
+msgid "Invalid Mac address."
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/wtforms/validators.py:540
+msgid "Invalid URL."
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/wtforms/validators.py:561
+msgid "Invalid UUID."
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/wtforms/validators.py:594
+#, python-format
+msgid "Invalid value, must be one of: %(values)s."
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/wtforms/validators.py:629
+#, python-format
+msgid "Invalid value, can't be any of: %(values)s."
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/wtforms/validators.py:698
+msgid "This field cannot be edited"
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/wtforms/validators.py:714
+msgid "This field is disabled and cannot have a value"
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/wtforms/csrf/core.py:96
+msgid "Invalid CSRF Token."
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/wtforms/csrf/session.py:63
+msgid "CSRF token missing."
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/wtforms/csrf/session.py:71
+msgid "CSRF failed."
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/wtforms/csrf/session.py:76
+msgid "CSRF token expired."
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/wtforms/fields/choices.py:142
+msgid "Invalid Choice: could not coerce."
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/wtforms/fields/choices.py:149
+#: menv/lib/python3.12/site-packages/wtforms/fields/choices.py:203
+msgid "Choices cannot be None."
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/wtforms/fields/choices.py:155
+msgid "Not a valid choice."
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/wtforms/fields/choices.py:193
+msgid "Invalid choice(s): one or more data inputs could not be coerced."
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/wtforms/fields/choices.py:214
+#, python-format
+msgid "'%(value)s' is not a valid choice for this field."
+msgid_plural "'%(value)s' are not valid choices for this field."
+msgstr[0] ""
+msgstr[1] ""
+
+#: menv/lib/python3.12/site-packages/wtforms/fields/datetime.py:51
+msgid "Not a valid datetime value."
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/wtforms/fields/datetime.py:77
+msgid "Not a valid date value."
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/wtforms/fields/datetime.py:103
+msgid "Not a valid time value."
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/wtforms/fields/datetime.py:148
+msgid "Not a valid week value."
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/wtforms/fields/numeric.py:82
+#: menv/lib/python3.12/site-packages/wtforms/fields/numeric.py:92
+msgid "Not a valid integer value."
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/wtforms/fields/numeric.py:168
+msgid "Not a valid decimal value."
+msgstr ""
+
+#: menv/lib/python3.12/site-packages/wtforms/fields/numeric.py:197
+msgid "Not a valid float value."
+msgstr ""
+
+#: templates/ascii_decoder.html:4
+msgid "Konvertieren Sie ein Zeichen in DEC, HEX, OCT, ASCII und HTML-Entity."
+msgstr "Convertissez un caractère en DEC, HEX, OCT, ASCII et entité HTML."
+
+#: templates/ascii_decoder.html:8
+msgid "Zeichen eingeben"
+msgstr "Saisir un caractère"
+
+#: templates/ascii_decoder.html:17
+msgid "Decodieren"
+msgstr "Décoder"
+
+#: templates/ascii_decoder.html:22
+msgid "Ergebnis für '"
+msgstr "Résultat pour '"
+
+#: templates/ascii_decoder.html:28
+msgid "Name:"
+msgstr "Nom :"
+
+#: templates/ascii_decoder.html:36
+msgid "Häufig verwendete Steuerzeichen"
+msgstr "Caractères de contrôle courants"
+
+#: templates/audio.html:3
+#, fuzzy
+msgid "Audio-Rechner (dB)"
+msgstr "Calculateur audio"
+
+#: templates/audio.html:4
+msgid ""
+"Berechnen Sie den Schalldruckpegel (SPL) basierend auf "
+"Lautsprecherleistung und Entfernung."
+msgstr ""
+"Calculez le niveau de pression acoustique (SPL) en fonction de la"
+"puissance des haut-parleurs et de la distance."
+
+#: templates/audio.html:10
+msgid "Sensibilität (dB/W/m)"
+msgstr "Sensibilité (dB/W/m)"
+
+#: templates/audio.html:14 templates/strom.html:10 templates/waerme.html:6
+msgid "Leistung (W)"
+msgstr "Puissance (W)"
+
+#: templates/audio.html:18
+#, fuzzy
+msgid "Entfernung (m)"
+msgstr "Tension (V)"
+
+#: templates/audio.html:21 templates/converter.html:33 templates/poe.html:39
+#: templates/projektion.html:23 templates/screen_size.html:52
+#: templates/strom.html:24 templates/viewing_distance.html:21
+#: templates/waerme.html:9
+msgid "Berechnen"
+msgstr "Calculer"
+
+#: templates/audio.html:27 templates/audio_niveau.html:22
+#: templates/netzwerktest.html:23 templates/poe.html:45
+#: templates/screen_size.html:81 templates/strom.html:30
+msgid "Ergebnis:"
+msgstr "Résultat :"
+
+#: templates/audio.html:32
+msgid "Referenzwerte:"
+msgstr "Valeurs de référence :"
+
+#: templates/audio.html:34
+msgid "Flüstern"
+msgstr "Chuchotement"
+
+#: templates/audio.html:35
+msgid "Gespräch"
+msgstr "entretien"
+
+#: templates/audio.html:36
+msgid "Längerer Schutz notwendig"
+msgstr "Une protection prolongée est nécessaire"
+
+#: templates/audio.html:37
+#, fuzzy
+msgid "Konzert"
+msgstr "Convertisseur"
+
+#: templates/audio.html:38
+msgid "Schmerzgrenze"
+msgstr "seuil de douleur"
+
+#: templates/audio_niveau.html:3
+#, fuzzy
+msgid "Audio-Niveau-Konverter"
+msgstr "Conversion niveaux audio"
+
+#: templates/audio_niveau.html:4
+msgid "Umrechnung zwischen dBu, dBV, Volt und Millivolt."
+msgstr "Conversion entre dBu, dBV, volts et millivolts."
+
+#: templates/audio_niveau.html:17
+#, fuzzy
+msgid "Konvertieren"
+msgstr "Convertisseur"
+
+#: templates/base.html:53
+msgid "Abmelden"
+msgstr "Se déconnecter"
+
+#: templates/converter.html:3
+msgid "AV-Konverter & Bandbreite"
+msgstr "Convertisseur AV et bande passante"
+
+#: templates/converter.html:4
+msgid "Hilfe bei HDMI, NDI und Kabeln für Konferenzräume."
+msgstr "Assistance pour HDMI, NDI et câbles pour salles de conférence."
+
+#: templates/converter.html:19 templates/viewing_distance.html:14
+msgid "Auflösung"
+msgstr "résolution"
+
+#: templates/converter.html:51
+msgid ""
+"Für 4K60 benötigen Sie HDMI 2.0 oder höher und zertifiziertes Kabel (High"
+" Speed)."
+msgstr "Pour la 4K60, vous avez besoin d'un câble HDMI 2.0 ou supérieur et certifié (haut débit)."
+
+#: templates/converter.html:62 templates/pinouts.html:27
+#: templates/pinouts.html:48 templates/pinouts.html:75
+#, fuzzy
+msgid "Tipp:"
+msgstr "Type :"
+
+#: templates/converter.html:62
+msgid "Immer Shielded (S/FTP) in industriellen Umgebungen verwenden."
+msgstr "Toujours utiliser un câble blindé (S/FTP) dans les environnements industriels."
+
+#: templates/dante_assistant.html:4
+msgid "Automatische Erkennung von Dante-Geräten im Netzwerk."
+msgstr "Détection automatique des appareils Dante sur le réseau."
+
+#: templates/dante_assistant.html:10
+msgid ""
+"Tipp: Stellen Sie sicher, dass dante-discover im PATH ist oder Dante "
+"Controller installiert ist."
+msgstr ""
+"Conseil : assurez-vous que dante-discover se trouve dans le PATH"
+"ou que le contrôleur Dante est installé."
+
+#: templates/dante_assistant.html:48
+msgid "Dante-Bericht exportieren"
+msgstr "Exporter le rapport Dante"
+
+#: templates/dante_assistant.html:66
+msgid ""
+"Keine Dante-Geräte gefunden. Stellen Sie sicher, dass sich Geräte im "
+"selben Subnetz befinden."
+msgstr ""
+"Aucun appareil Dante détecté. Assurez-vous que les appareils"
+"se trouvent sur le même sous-réseau."
+
+#: templates/dante_assistant.html:70 templates/poe.html:54
+#: templates/strom.html:38
+msgid "Hinweise:"
+msgstr "Remarques :"
+
+#: templates/dashboard.html:4
+msgid "Willkommen bei mttools"
+msgstr "Bienvenue sur xtoolav"
+
+#: templates/dashboard.html:5
+msgid "Ihr Werkzeugkasten für AV-Installationen in Konferenzräumen."
+msgstr "Votre boîte à outils pour les installations audiovisuelles dans les salles de conférence."
+
+#: templates/dashboard.html:25 templates/pdf_template.html:19
+msgid "Letzte Berechnungen"
+msgstr "Derniers calculs"
+
+#: templates/dashboard.html:48
+msgid "Export PDF"
+msgstr "Exporter en PDF"
+
+#: templates/netzwerk_scanner.html:4
+msgid "Wählen Sie ein Netzwerk aus oder geben Sie es manuell ein."
+msgstr "Choisissez un réseau ou saisissez-le manuellement."
+
+#: templates/netzwerk_scanner.html:11
+msgid "Manuell eingeben"
+msgstr "Saisir manuellement"
+
+#: templates/netzwerk_scanner.html:29
+msgid "Scan starten"
+msgstr "Lancer l'analyse"
+
+#: templates/netzwerk_scanner.html:33
+msgid "Neu starten"
+msgstr "Redémarrer"
+
+#: templates/netzwerk_scanner.html:46
+#, fuzzy
+msgid "Hostname"
+msgstr "Nom :"
+
+#: templates/netzwerk_scanner.html:48
+msgid "Status"
+msgstr ""
+
+#: templates/netzwerk_scanner.html:67 templates/netzwerk_scanner.html:95
+#, fuzzy
+msgid "Keine Geräte gefunden."
+msgstr "appareils trouvés"
+
+#: templates/netzwerk_scanner.html:75
+#, fuzzy
+msgid "Scan läuft..."
+msgstr "Analyse en cours... Veuillez patienter"
+
+#: templates/netzwerk_scanner.html:87
+msgid "Geräte gefunden"
+msgstr "appareils trouvés"
+
+#: templates/netzwerk_scanner.html:90
+#, fuzzy
+msgid "(Scan läuft... bitte warten)"
+msgstr "Analyse en cours... Veuillez patienter"
+
+#: templates/netzwerktest.html:4
+#, fuzzy
+msgid "Ping und Port-Prüfung für AV-Geräte."
+msgstr "Ping et vérification de port"
+
+#: templates/netzwerktest.html:10
+msgid "IP-Adresse oder Hostname"
+msgstr "Adresse IP ou nom d'hôte"
+
+#: templates/netzwerktest.html:14
+msgid "Port (optional)"
+msgstr "Port (optionnel)"
+
+#: templates/netzwerktest.html:17
+#, fuzzy
+msgid "Test starten"
+msgstr "Redémarrer"
+
+#: templates/netzwerktest.html:29
+msgid "geöffnet"
+msgstr "ouvert"
+
+#: templates/netzwerktest.html:31
+msgid "geschlossen"
+msgstr "fermé"
+
+#: templates/netzwerktest.html:35
+msgid "Verbindung fehlgeschlagen"
+msgstr "Connexion échouée"
+
+#: templates/pdf_template.html:16
+msgid "Benutzer"
+msgstr "Utilisateur"
+
+#: templates/pdf_template.html:17
+msgid "Datum"
+msgstr "Date"
+
+#: templates/pdf_template.html:24
+msgid "Typ"
+msgstr "Type"
+
+#: templates/pdf_template.html:25
+msgid "Details"
+msgstr "Détails"
+
+#: templates/pdf_template.html:26
+msgid "Ergebnis"
+msgstr "Résultat"
+
+#: templates/pdf_template.html:40
+msgid "Keine Berechnungen vorhanden."
+msgstr "Aucun calcul disponible."
+
+#: templates/pinouts.html:3
+msgid "Pinouts & Broschüren"
+msgstr "Pinouts & Brochages"
+
+#: templates/pinouts.html:4
+msgid "Häufig verwendete Anschlüsse in AV-Installationen."
+msgstr "Connexions fréquemment utilisées dans les installations audiovisuelles."
+
+#: templates/pinouts.html:27
+msgid "XLR wird für Mikrofone, Line- und Lautsprecher (4/5-polig) verwendet."
+msgstr "Le connecteur XLR est utilisé pour les microphones, les lignes et les haut-parleurs (4/5 broches)."
+
+#: templates/pinouts.html:48
+msgid "Für Dante, NDI, PoE und Control-Systeme."
+msgstr "Pour Dante, NDI, PoE et systèmes de contrôle."
+
+#: templates/pinouts.html:59
+msgid "Formate:"
+msgstr "Formats :"
+
+#: templates/pinouts.html:61
+msgid "Max. Länge:"
+msgstr "Longueur max. :"
+
+#: templates/pinouts.html:68
+msgid ""
+"Dante verwendet Standard-Ethernet (RJ45). Kein spezielles Pinout – aber "
+"stabiles Netzwerk erforderlich."
+msgstr "Dante utilise un câble Ethernet standard (RJ45). Aucun brochage particulier n'est nécessaire, mais "
+"un réseau stable est indispensable."
+
+#: templates/pinouts.html:70
+msgid "Protokoll:"
+msgstr "Protocolle"
+
+#: templates/pinouts.html:71
+#, fuzzy
+msgid "Ports:"
+msgstr "Brochages"
+
+#: templates/pinouts.html:72
+msgid "Switch:"
+msgstr ""
+
+#: templates/pinouts.html:73 templates/strom.html:34
+msgid "Kabel:"
+msgstr "Câble :"
+
+#: templates/pinouts.html:75
+msgid "Immer Firmware aktuell halten und VLANs für Audio verwenden."
+msgstr "Maintenez toujours le micrologiciel à jour et utilisez des VLAN pour l'audio."
+
+#: templates/poe.html:3
+#, fuzzy
+msgid "PoE-Leistungsrechner"
+msgstr "Calculateur PoE"
+
+#: templates/poe.html:4
+msgid "Wie viele Geräte können über Power over Ethernet (PoE) betrieben werden?"
+msgstr ""
+
+#: templates/poe.html:12
+msgid "Switch-Typ / Gesamtleistung"
+msgstr ""
+
+#: templates/poe.html:23
+msgid "Gerätetyp"
+msgstr "type de dispositif"
+
+#: templates/poe.html:35
+#, fuzzy
+msgid "Eigene Leistung (W)"
+msgstr "Puissance (W)"
+
+#: templates/poe.html:46
+msgid "Verfügbar:"
+msgstr "Disponible"
+
+#: templates/poe.html:47
+msgid "Anzahl Geräte:"
+msgstr "Nombre d'appareils :"
+
+#: templates/projektion.html:3
+#, fuzzy
+msgid "Projektionsrechner"
+msgstr "Calculer la distance de projection"
+
+#: templates/projektion.html:4
+msgid "Berechnen Sie die Projektionsdistanz für Ihr Gerät."
+msgstr "Calculez la distance de projection pour votre appareil."
+
+#: templates/projektion.html:8
+#, fuzzy
+msgid "Diagonale (Zoll)"
+msgstr "Diagonales d'écran"
+
+#: templates/projektion.html:28
+msgid "Empfohlene Distanz:"
+msgstr "Distance recommandée :"
+
+#: templates/projektion.html:29 templates/viewing_distance.html:28
+msgid "Min:"
+msgstr ""
+
+#: templates/projektion.html:30 templates/viewing_distance.html:30
+msgid "Max:"
+msgstr ""
+
+#: templates/screen_size.html:3
+#, fuzzy
+msgid "Bilddiagonalen-Rechner"
+msgstr "Diagonales d'écran"
+
+#: templates/screen_size.html:4
+msgid ""
+"Berechnen Sie Breite, Höhe und Diagonale von Bildschirmen und "
+"Projektionsflächen."
+msgstr "Calculez la largeur, la hauteur et la diagonale des écrans et des "
+"surfaces de projection."
+
+#: templates/screen_size.html:8
+msgid "Seitenverhältnis"
+msgstr "rapport hauteur/largeur"
+
+#: templates/screen_size.html:20
+#, fuzzy
+msgid "Diagonale"
+msgstr "Diagonales d'écran"
+
+#: templates/screen_size.html:30
+msgid "Breite"
+msgstr "largeur"
+
+#: templates/screen_size.html:40
+msgid "Höhe"
+msgstr "hauteur"
+
+#: templates/screen_size.html:53
+msgid "Zurücksetzen"
+msgstr "Réinitialisation"
+
+#: templates/screen_size.html:58
+#, fuzzy
+msgid "Sichtabstand berechnen"
+msgstr "Distance de vision"
+
+#: templates/screen_size.html:72
+#, fuzzy
+msgid "Abstand berechnen"
+msgstr "Calculer"
+
+#: templates/screen_size.html:86
+msgid "Visuelle Darstellung"
+msgstr "Représentation visuelle"
+
+#: templates/strom.html:3
+msgid "Stromrechner (Leistung → Strom)"
+msgstr "Calculateur d'électricité (puissance → électricité)"
+
+#: templates/strom.html:4
+msgid ""
+"Berechnen Sie den Stromverbrauch, Kabelquerschnitt und Sicherung für AV-"
+"Geräte."
+msgstr "Calculez la consommation électrique, la section de câble et le fusible pour les appareils audiovisuels"
+
+#: templates/strom.html:14
+msgid "Spannung (V)"
+msgstr "Tension (V)"
+
+#: templates/strom.html:18
+msgid "Phasen"
+msgstr "Phases"
+
+#: templates/strom.html:20
+msgid "Einphasig (230V)"
+msgstr "Monophasé (230V)"
+
+#: templates/strom.html:21
+msgid "Dreiphasig (400V)"
+msgstr "Triphasé (400V)"
+
+#: templates/strom.html:31
+msgid "Strom:"
+msgstr "Courant :"
+
+#: templates/strom.html:32
+msgid "Typ:"
+msgstr "Type :"
+
+#: templates/strom.html:33
+msgid "Sicherung:"
+msgstr "Fusible :"
+
+#: templates/uhf.html:3
+msgid "UHF-Kanalplaner"
+msgstr ""
+
+#: templates/uhf.html:4
+#, fuzzy
+msgid "Freie UHF-Kanäle für kabellose Mikrofone (Europa)."
+msgstr "Canaux pour micros sans fil"
+
+#: templates/uhf.html:7
+#, fuzzy
+msgid "Hinweis:"
+msgstr "Remarques :"
+
+#: templates/uhf.html:8
+msgid "Bereich 470–790 MHz. 5G ab 700 MHz berücksichtigen."
+msgstr ""
+
+#: templates/viewing_distance.html:3
+#, fuzzy
+msgid "Sichtabstand-Rechner"
+msgstr "Distance de vision"
+
+#: templates/viewing_distance.html:4
+msgid "Optimale Sehdistanz für Monitore und Projektionsflächen."
+msgstr ""
+
+#: templates/viewing_distance.html:10
+msgid "Bildschirmgröße (Zoll)"
+msgstr ""
+
+#: templates/viewing_distance.html:27
+#, fuzzy
+msgid "Empfohlener Sichtabstand:"
+msgstr "Distance de vision"
+
+#: templates/viewing_distance.html:29
+#, fuzzy
+msgid "Ideal:"
+msgstr "Détails"
+
+#: templates/viewing_distance.html:34
+msgid "Richtlinien:"
+msgstr ""
+
+#: templates/waerme.html:3
+#, fuzzy
+msgid "Wärmeabgabe-Rechner"
+msgstr "Déperdition thermique des appareils"
+
+#: templates/waerme.html:14
+#, fuzzy
+msgid "Wärmeabgabe:"
+msgstr "Déperdition thermique des appareils"
+
+#: templates/waerme.html:18
+msgid "Empfohlene Kühlung:"
+msgstr ""
+
+#: templates/auth/login.html:7 templates/auth/login.html:17
+msgid "Anmelden"
+msgstr ""
+
+#: templates/auth/login.html:10 templates/auth/register.html:10
+#, fuzzy
+msgid "Benutzername"
+msgstr "Utilisateur"
+
+#: templates/auth/login.html:14 templates/auth/register.html:18
+msgid "Passwort"
+msgstr ""
+
+#: templates/auth/login.html:18 templates/auth/register.html:7
+#: templates/auth/register.html:28
+msgid "Registrieren"
+msgstr ""
+
+#: templates/auth/register.html:14
+#, fuzzy
+msgid "E-Mail"
+msgstr "Détails"
+
+#: templates/auth/register.html:22
+msgid "Sprache"
+msgstr ""
+
+#: templates/auth/register.html:29
+msgid "Zurück zur Anmeldung"
+msgstr ""
+
+#~ msgid "UHF"
+#~ msgstr "UHF"
+
+#~ msgid "dBu/dBV"
+#~ msgstr "dBu/dBV"
+
+#~ msgid "Dante Assistant"
+#~ msgstr "Assistant Dante"
+
+#~ msgid "Deutsch"
+#~ msgstr "Allemand"
+
+#~ msgid "Français"
+#~ msgstr "Français"
+
+#~ msgid "Abbrechen"
+#~ msgstr "Annuler"
+
+#~ msgid "DE: Standard 230V / 50Hz"
+#~ msgstr "DE : Standard 230V / 50Hz"
+
+#~ msgid "Für Racks: Max. 16A pro Steckdosenleiste"
+#~ msgstr "Pour racks : max. 16A par multiprise"
+
+#~ msgid "Immer 20% Reserve einplanen"
+#~ msgstr "Prévoir toujours 20% de marge"
+
