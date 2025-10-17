@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{% trans %}AV-Konverter & Bandbreite{% endtrans %}</h2>
+<p>{% trans %}Hilfe bei HDMI, NDI und Kabeln für Konferenzräume.{% endtrans %}</p>
+
+<ul class="nav nav-tabs" id="avTabs">
+    <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#ndi">NDI</a></li>
+    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#hdmi">HDMI</a></li>
+    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#cable">Kabel</a></li>
+</ul>
+
+<div class="tab-content bg-white p-4 border border-top-0 rounded">
+    <!-- ONGLET NDI -->
+    <div class="tab-pane active" id="ndi">
+        <h5>NDI Bandbreite berechnen</h5>
+        <form method="POST" action="{{ url_for('converter') }}#ndi">
+            <input type="hidden" name="tool" value="ndi">
+            <div class="mb-3">
+                <label class="form-label">{% trans %}Auflösung{% endtrans %}</label>
+                <select name="resolution" class="form-select" required>
+                    <option value="1920x1080">1080p (1920x1080)</option>
+                    <option value="1280x720">720p (1280x720)</option>
+                    <option value="3840x2160">4K (3840x2160)</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">FPS</label>
+                <select name="fps" class="form-select" required>
+                    <option>30</option>
+                    <option>60</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">{% trans %}Berechnen{% endtrans %}</button>
+        </form>
+        {% if ndi_result %}
+        <div class="alert alert-info mt-3">{{ ndi_result }}</div>
+        {% endif %}
+    </div>
+
+    <!-- ONGLET HDMI -->
+    <div class="tab-pane" id="hdmi">
+        <h5>HDMI Versionen im Vergleich</h5>
+        <table class="table table-sm">
+            <thead><tr><th>HDMI</th><th>Bande passante</th><th>Max. Auflösung</th></tr></thead>
+            <tbody>
+                <tr><td>1.4</td><td>10.2 Gbps</td><td>4K@30Hz</td></tr>
+                <tr><td>2.0</td><td>18 Gbps</td><td>4K@60Hz</td></tr>
+                <tr><td>2.1</td><td>48 Gbps</td><td>8K@60Hz</td></tr>
+            </tbody>
+        </table>
+        <p><strong>Tipp:</strong> {% trans %}Für 4K60 benötigen Sie HDMI 2.0 oder höher und zertifiziertes Kabel (High Speed).{% endtrans %}</p>
+    </div>
+
+    <!-- ONGLET CÂBLES -->
+    <div class="tab-pane" id="cable">
+        <h5>Cat6 / Cat6a Kabel – Max. Länge für NDI</h5>
+        <ul>
+            <li><strong>Cat6:</strong> Bis 55m für 1080p, danach Signalverlust möglich</li>
+            <li><strong>Cat6a:</strong> Bis 100m stabil, empfohlen für 4K-NDI</li>
+            <li><strong>Faser:</strong> Für >100m oder hohe Interferenz</li>
+        </ul>
+        <p><strong>{% trans %}Tipp:{% endtrans %}</strong> {% trans %}Immer Shielded (S/FTP) in industriellen Umgebungen verwenden.{% endtrans %}</p>
+    </div>
+</div>
+{% block scripts %}
+<script>
+// Scroll vers la fin après un nouveau calcul
+setTimeout(() => {
+    const slider = document.getElementById('recentSlider');
+    if (slider) {
+        slider.scrollLeft = slider.scrollWidth;
+    }
+}, 500);
+</script>
+{% endblock %}
+{% endblock %}

@@ -1,0 +1,9 @@
+﻿Outil,Description
+🔌 Stromrechner,"Berechnet Stromverbrauch, Sicherung, Kabelquerschnitt"
+🔄 NDI / HDMI Converter,"Bandbreite, Auflösungen, Câbles"
+🔊 Audio dB Rechner,Schalldruck (SPL) basierend auf Leistung & Entfernung
+📏 Sichtabstand & Bildgröße,Optimale Distanz und Umrechnung Zoll ↔ cm
+📡 Netzwerk Diagnose,"Ping, Port-Check, ARP, Scanner mit Live-Ergebnissen"
+📶 Dante Assistant,Erkennt Dante-Geräte im Netzwerk (via dante-discover)
+🔣 ASCII Decoder,"Zeichen → DEC, HEX, OCT, HTML Entity"
+💾 Historie & Export,Letzte Berechnungen + PDF-Export

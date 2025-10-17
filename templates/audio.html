@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{% trans %}Audio-Rechner (dB){% endtrans %}</h2>
+<p>{% trans %}Berechnen Sie den Schalldruckpegel (SPL) basierend auf Lautsprecherleistung und Entfernung.{% endtrans %}</p>
+
+<div class="row">
+    <div class="col-md-6">
+        <form method="POST" class="bg-white p-4 border rounded">
+            <div class="mb-3">
+                <label class="form-label">{% trans %}Sensibilität (dB/W/m){% endtrans %}</label>
+                <input type="number" name="sensitivity" step="0.1" value="98" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">{% trans %}Leistung (W){% endtrans %}</label>
+                <input type="number" name="power" min="1" value="100" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">{% trans %}Entfernung (m){% endtrans %}</label>
+                <input type="number" name="distance" step="0.1" value="10" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-success">{% trans %}Berechnen{% endtrans %}</button>
+        </form>
+    </div>
+    <div class="col-md-6">
+        {% if result %}
+        <div class="alert alert-info">
+            <strong>{% trans %}Ergebnis:{% endtrans %}</strong><br>
+            {{ result }}
+        </div>
+        <div class="card mt-3">
+            <div class="card-body">
+                <h6>{% trans %}Referenzwerte:{% endtrans %}</h6>
+                <ul>
+                    <li>30 dB: {% trans %}Flüstern{% endtrans %}</li>
+                    <li>60 dB: {% trans %}Gespräch{% endtrans %}</li>
+                    <li>85 dB: {% trans %}Längerer Schutz notwendig{% endtrans %}</li>
+                    <li>100 dB: {% trans %}Konzert{% endtrans %}</li>
+                    <li>120 dB: {% trans %}Schmerzgrenze{% endtrans %}</li>
+                </ul>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% block scripts %}
+<script>
+// Scroll vers la fin après un nouveau calcul
+setTimeout(() => {
+    const slider = document.getElementById('recentSlider');
+    if (slider) {
+        slider.scrollLeft = slider.scrollWidth;
+    }
+}, 500);
+</script>
+{% endblock %}
+{% endblock %}

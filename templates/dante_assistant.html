@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Dante Assistant</h2>
+<p><strong>{% trans %}Automatische Erkennung von Dante-Geräten im Netzwerk.{% endtrans %}</strong></p>
+
+{% if error %}
+<div class="alert alert-warning">
+    ⚠️ {{ error }}<br>
+    <small>
+        {% trans %}Tipp: Stellen Sie sicher, dass dante-discover im PATH ist oder Dante Controller installiert ist.{% endtrans %}
+    </small>
+</div>
+{% endif %}
+
+{% if devices %}
+<div class="table-responsive">
+    <table class="table table-striped table-hover">
+        <thead class="table-primary">
+            <tr>
+                <th>Name</th>
+                <th>IP</th>
+                <th>MAC</th>
+                <th>Modell</th>
+                <th>Kanäle (E/S)</th>
+                <th>Firmware</th>
+                <th>Aktion</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for dev in devices %}
+            <tr>
+                <td><strong>{{ dev.name }}</strong></td>
+                <td><code>{{ dev.ip }}</code></td>
+                <td><code>{{ dev.mac }}</code></td>
+                <td>{{ dev.model }}</td>
+                <td>{{ dev.channels_in }} / {{ dev.channels_out }}</td>
+                <td>{{ dev.firmware }}</td>
+                <td>
+                    <a href="dante://{{ dev.ip }}" class="btn btn-sm btn-success">🔧</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<a href="{{ url_for('export_pdf') }}" class="btn btn-outline-primary btn-sm mt-2">
+    📄 {% trans %}Dante-Bericht exportieren{% endtrans %}
+</a>
+
+<!-- Sauvegarder dans historique -->
+<script>
+fetch('{{ url_for("save_recent_calculation") }}', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+        type: "Dante",
+        input: "{{ devices|length }} Geräte",
+        result: "{{ devices|length }} erkannt"
+    })
+});
+</script>
+
+{% else %}
+<div class="alert alert-info">
+    {% trans %}Keine Dante-Geräte gefunden. Stellen Sie sicher, dass sich Geräte im selben Subnetz befinden.{% endtrans %}
+</div>
+{% endif %}
+
+<h5 class="mt-4">{% trans %}Hinweise:{% endtrans %}</h5>
+<ul>
+    <li>Dante verwendet Multicast (UDP) und benötigt IGMP Snooping auf Switches</li>
+    <li>Port 5004 für RTP-Audio, 8080/1950 für Control</li>
+    <li><code>dante://192.168.1.50</code> öffnet Dante Controller direkt</li>
+</ul>
+{% endblock %}

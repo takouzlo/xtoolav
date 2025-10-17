@@ -1,0 +1,8 @@
+Flask==3.0.0
+Flask-Login==0.6.3
+Flask-WTF==1.2.1
+WTForms==3.1.2
+passlib==1.7.4
+email-validator==2.1.0
+pdfkit # Pour PDF plus tard
+flask_babel     # Pour traduction

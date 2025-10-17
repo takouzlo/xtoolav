@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: Arial, sans-serif; padding: 2cm; }
+        h1 { color: #0056b3; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+        th { background-color: #f0f0f0; }
+        .footer { margin-top: 30px; font-size: 0.9em; color: #666; }
+    </style>
+</head>
+<body>
+    <h1>{{ data.title }}</h1>
+    <p><strong>{% trans %}Benutzer{% endtrans %}:</strong> {{ data.user }}</p>
+    <p><strong>{% trans %}Datum{% endtrans %}:</strong> {{ data.date }}</p>
+
+    <h2>{% trans %}Letzte Berechnungen{% endtrans %}</h2>
+    {% if data.calculs %}
+    <table>
+        <thead>
+            <tr>
+                <th>{% trans %}Typ{% endtrans %}</th>
+                <th>{% trans %}Details{% endtrans %}</th>
+                <th>{% trans %}Ergebnis{% endtrans %}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for calc in data.calculs %}
+            <tr>
+                <td>{{ calc.type }}</td>
+                <td>{{ calc.input }}</td>
+                <td>{{ calc.result }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>{% trans %}Keine Berechnungen vorhanden.{% endtrans %}</p>
+    {% endif %}
+
+    <div class="footer">
+        mttools – AV Werkzeug für Konferenzräume • {{ data.date }}
+    </div>
+</body>
+</html>

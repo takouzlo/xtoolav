@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>{% trans %}Willkommen bei mttools{% endtrans %}, {{ current_user.username }}!</h2>
+<p class="text-muted">{% trans %}Ihr Werkzeugkasten für AV-Installationen in Konferenzräumen.{% endtrans %}</p>
+
+<!-- Outils principaux -->
+<div class="row row-cols-1 row-cols-md-3 g-4 mt-2">
+    {% for tool in tools %}
+    <div class="col">
+        <div class="card h-100 shadow-sm border-light text-center d-flex flex-column">
+            <div class="card-body d-flex flex-column">
+                <h5 class="card-title mb-3 text-primary">{{ tool.icon }} {{ tool.title }}</h5>
+                <p class="card-text flex-grow-1 text-secondary">{{ tool.desc }}</p>
+                <a href="{{ tool.url }}" class="btn btn-primary mt-auto btn-sm py-2">Go</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<!-- Historique récent -->
+{% if session.recent_calculations %}
+<div class="mt-5">
+    <h5 class="text-primary">{% trans %}Letzte Berechnungen{% endtrans %}</h5>
+    <div class="recent-slider-container">
+        <div id="recentSlider" class="recent-slider">
+            {% for c in session.recent_calculations %}
+            <div class="recent-slide">
+                <strong>{{ c.type }}</strong><br>
+                <small>{{ c.input }}</small><br>
+                <small class="text-muted">{{ c.result|safe }}</small>
+                <div class="timestamp">{{ c.timestamp }}</div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="slider-nav">
+            <button onclick="scrollSlider(-200)"><</button>
+            <button onclick="scrollSlider(200)">></button>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+<!-- Export PDF -->
+<div class="mt-3 mb-3 text-center">
+    <a href="{{ url_for('export_pdf') }}" class="btn btn-outline-success btn-lg">
+        📄 {% trans %}Export PDF{% endtrans %}
+    </a>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+function scrollSlider(amount) {
+    document.getElementById('recentSlider').scrollBy({
+        left: amount,
+        behavior: 'smooth'
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const slider = document.getElementById('recentSlider');
+    slider.scrollLeft = slider.scrollWidth; // Scroll vers le dernier
+});
+</script>
+{% endblock %}

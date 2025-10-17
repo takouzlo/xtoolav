@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow">
+            <div class="card-body">
+                <h3 class="card-title">{% trans %}Registrieren{% endtrans %}</h3>
+                <form method="POST">
+                    <div class="mb-3">
+                        <label class="form-label">{% trans %}Benutzername{% endtrans %}</label>
+                        <input type="text" name="username" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">{% trans %}E-Mail{% endtrans %}</label>
+                        <input type="email" name="email" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">{% trans %}Passwort{% endtrans %}</label>
+                        <input type="password" name="password" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">{% trans %}Sprache{% endtrans %}</label>
+                        <select name="language" class="form-select">
+                            <option value="de">Deutsch</option>
+                            <option value="fr">Français</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-success">{% trans %}Registrieren{% endtrans %}</button>
+                    <a href="{{ url_for('login') }}" class="btn btn-outline-secondary">{% trans %}Zurück zur Anmeldung{% endtrans %}</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

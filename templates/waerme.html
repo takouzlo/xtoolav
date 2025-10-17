@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{% trans %}Wärmeabgabe-Rechner{% endtrans %}</h2>
+<form method="POST" class="bg-white p-4 border rounded">
+    <div class="mb-3">
+        <label class="form-label">{% trans %}Leistung (W){% endtrans %}</label>
+        <input type="number" name="power" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-primary">{% trans %}Berechnen{% endtrans %}</button>
+</form>
+
+{% if result %}
+<div class="alert alert-info">
+    <strong>{% trans %}Wärmeabgabe:{% endtrans %}</strong><br>
+    🔥 {{ result.watt }}<br>
+    🌡️ {{ result.btu }}<br>
+    🍲 {{ result.kcal }}<br>
+    ❄️ <strong>{% trans %}Empfohlene Kühlung:{% endtrans %}</strong> {{ result.cooling }}
+</div>
+{% endif %}
+{% endblock %}

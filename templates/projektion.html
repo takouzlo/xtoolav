@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{% trans %}Projektionsrechner{% endtrans %}</h2>
+<p>{% trans %}Berechnen Sie die Projektionsdistanz für Ihr Gerät.{% endtrans %}</p>
+
+<form method="POST" class="bg-white p-4 border rounded mb-4">
+    <div class="mb-3">
+        <label class="form-label">{% trans %}Diagonale (Zoll){% endtrans %}</label>
+        <input type="number" name="size" value="100" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Aspect Ratio</label>
+        <select name="ratio" class="form-select">
+            <option value="1.78">16:9 (HD)</option>
+            <option value="2.0">16:10</option>
+            <option value="1.33">4:3</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Throw Ratio</label>
+        <input type="text" name="throw" value="1.5-2.0" placeholder="z.B. 1.2-1.5" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-primary">{% trans %}Berechnen{% endtrans %}</button>
+</form>
+
+{% if result %}
+<div class="alert alert-info">
+    <strong>{% trans %}Empfohlene Distanz:{% endtrans %}</strong><br>
+    🔦 <strong>{% trans %}Min:{% endtrans %}</strong> {{ result.min }} m<br>
+    🔦 <strong>{% trans %}Max:{% endtrans %}</strong> {{ result.max }} m
+</div>
+{% endif %}
+{% endblock %}

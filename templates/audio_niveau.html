@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{% trans %}Audio-Niveau-Konverter{% endtrans %}</h2>
+<p>{% trans %}Umrechnung zwischen dBu, dBV, Volt und Millivolt.{% endtrans %}</p>
+
+<form method="POST" class="bg-white p-4 border rounded">
+    <div class="mb-3">
+        <label class="form-label">Eingabe</label>
+        <select name="unit" class="form-select mb-2">
+            <option value="dbu">dBu</option>
+            <option value="dbv">dBV</option>
+            <option value="v">Volt</option>
+            <option value="mv">Millivolt</option>
+        </select>
+        <input type="number" name="value" step="any" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-primary">{% trans %}Konvertieren{% endtrans %}</button>
+</form>
+
+{% if result %}
+<div class="alert alert-success mt-3">
+    <strong>{% trans %}Ergebnis:{% endtrans %}</strong><br>
+    {% for k, v in result.items() %}
+    {{ k|upper }}: {{ v }}<br>
+    {% endfor %}
+</div>
+{% endif %}
+{% endblock %}

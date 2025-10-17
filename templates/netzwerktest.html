@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{% trans %}Netzwerktest{% endtrans %}</h2>
+<p>{% trans %}Ping und Port-Prüfung für AV-Geräte.{% endtrans %}</p>
+
+<div class="row">
+    <div class="col-md-6">
+        <form method="POST" class="bg-white p-4 border rounded">
+            <div class="mb-3">
+                <label class="form-label">{% trans %}IP-Adresse oder Hostname{% endtrans %}</label>
+                <input type="text" name="host" value="8.8.8.8" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">{% trans %}Port (optional){% endtrans %}</label>
+                <input type="number" name="port" class="form-control" placeholder="z.B. 5004 für NDI">
+            </div>
+            <button type="submit" class="btn btn-primary">{% trans %}Test starten{% endtrans %}</button>
+        </form>
+    </div>
+    <div class="col-md-6">
+        {% if result %}
+        <div class="alert {% if result.success %}alert-success{% else %}alert-danger{% endif %}">
+            <strong>{% trans %}Ergebnis:{% endtrans %}</strong><br>
+            {% if result.ping %}
+                🟢 Ping: {{ result.ping }} ms<br>
+            {% endif %}
+            {% if result.port_open is not none %}
+                {% if result.port_open %}
+                    🟢 Port {{ result.port }}: {% trans %}geöffnet{% endtrans %}
+                {% else %}
+                    🔴 Port {{ result.port }}: {% trans %}geschlossen{% endtrans %}
+                {% endif %}
+            {% endif %}
+            {% if not result.ping and result.port_open is none %}
+                🔴 {% trans %}Verbindung fehlgeschlagen{% endtrans %}
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

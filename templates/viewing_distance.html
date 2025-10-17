@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{% trans %}Sichtabstand-Rechner{% endtrans %}</h2>
+<p>{% trans %}Optimale Sehdistanz für Monitore und Projektionsflächen.{% endtrans %}</p>
+
+<div class="row">
+    <div class="col-md-6">
+        <form method="POST" class="bg-white p-4 border rounded">
+            <div class="mb-3">
+                <label class="form-label">{% trans %}Bildschirmgröße (Zoll){% endtrans %}</label>
+                <input type="number" name="size" value="85" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">{% trans %}Auflösung{% endtrans %}</label>
+                <select name="resolution" class="form-select" required>
+                    <option value="1080">Full HD (1080p)</option>
+                    <option value="2160">4K UHD</option>
+                    <option value="4320">8K</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">{% trans %}Berechnen{% endtrans %}</button>
+        </form>
+    </div>
+    <div class="col-md-6">
+        {% if result %}
+        <div class="alert alert-success">
+            <strong>{% trans %}Empfohlener Sichtabstand:{% endtrans %}</strong><br>
+            📏 <strong>{% trans %}Min:{% endtrans %}</strong> {{ result.min }} m<br>
+            📏 <strong>{% trans %}Ideal:{% endtrans %}</strong> {{ result.ideal }} m<br>
+            📏 <strong>{% trans %}Max:{% endtrans %}</strong> {{ result.max }} m
+        </div>
+        <div class="card mt-3">
+            <div class="card-body">
+                <h6>{% trans %}Richtlinien:{% endtrans %}</h6>
+                <ul>
+                    <li><strong>Full HD:</strong> 1,5–2,5 x Bildhöhe</li>
+                    <li><strong>4K:</strong> 1,0–1,5 x Bildhöhe</li>
+                    <li><strong>8K:</strong> 0,75–1,0 x Bildhöhe</li>
+                </ul>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% block scripts %}
+<script>
+// Scroll vers la fin après un nouveau calcul
+setTimeout(() => {
+    const slider = document.getElementById('recentSlider');
+    if (slider) {
+        slider.scrollLeft = slider.scrollWidth;
+    }
+}, 500);
+</script>
+{% endblock %}
+{% endblock %}
+

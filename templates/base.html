@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="{{ current_user.language if current_user.is_authenticated else 'de' }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mttools - AV Techniker Werkzeug</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- PWA -->
+    <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
+    <link rel="icon" href="{{ url_for('static', filename='img/logo.png') }}" sizes="192x192">
+    <meta name="theme-color" content="#0056b3">
+
+    <!-- Charger le service worker -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/static/js/service-worker.js')
+            .then(reg => console.log('SW registered: ', reg))
+            .catch(err => console.log('SW registration failed: ', err));
+        });
+      }
+    </script>
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url_for('dashboard') }}">mttools</a>
+            <!-- Dans la navbar, remplace la ligne du username par ceci -->
+            <div class="navbar-nav ms-auto">
+                {% if current_user.is_authenticated %}
+                    <span class="nav-text text-white me-3">👤 {{ current_user.username }}</span>
+
+                    <!-- Bouton Langue -->
+                    <div class="dropdown me-2">
+                        <button class="btn btn-sm btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                            {{ '🇩🇪' if current_user.language == 'de' else '🇫🇷' }}
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" href="{{ url_for('change_language', lang='de') }}">
+                                    🇩🇪 Deutsch
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{{ url_for('change_language', lang='fr') }}">
+                                    🇫🇷 Français
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <a class="nav-link" href="{{ url_for('logout') }}">{% trans %}Abmelden{% endtrans %}</a>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ 'danger' if category == 'error' else 'success' if category == 'success' else 'info' }} alert-dismissible fade show">
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        {% block content %}{% endblock %}
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

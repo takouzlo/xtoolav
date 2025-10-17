@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{% trans %}PoE-Leistungsrechner{% endtrans %}</h2>
+<p>{% trans %}Wie viele Geräte können über Power over Ethernet (PoE) betrieben werden?{% endtrans %}</p>
+
+<div class="row">
+    <div class="col-md-6">
+        <form method="POST" class="bg-white p-4 border rounded">
+            <input type="hidden" name="tool" value="poe">
+
+            <div class="mb-3">
+                <label class="form-label">{% trans %}Switch-Typ / Gesamtleistung{% endtrans %}</label>
+                <select name="switch_power" class="form-select" required>
+                    <option value="30">PoE (IEEE 802.3af) – 30 W</option>
+                    <option value="60">PoE+ (IEEE 802.3at) – 60 W</option>
+                    <option value="90">PoE++ (IEEE 802.3bt) – 90 W</option>
+                    <option value="240">Multi-Switch (24x PoE) – 240 W</option>
+                    <option value="740">High-Power Switch – 740 W</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">{% trans %}Gerätetyp{% endtrans %}</label>
+                <select name="device_type" class="form-select" required>
+                    <option value="7">IP-Telefon – 7 W</option>
+                    <option value="15">IP-Kamera – 15 W</option>
+                    <option value="20">PTZ-Kamera – 20 W</option>
+                    <option value="30">Wireless AP – 30 W</option>
+                    <option value="60">4K-NDI-Kamera – 60 W</option>
+                    <option value="custom">{% trans %}Benutzerdefiniert{% endtrans %}</option>
+                </select>
+            </div>
+
+            <div id="custom-power" class="mb-3" style="display: none;">
+                <label class="form-label">{% trans %}Eigene Leistung (W){% endtrans %}</label>
+                <input type="number" name="custom_power" class="form-control" placeholder="z.B. 12">
+            </div>
+
+            <button type="submit" class="btn btn-primary">{% trans %}Berechnen{% endtrans %}</button>
+        </form>
+    </div>
+    <div class="col-md-6">
+        {% if result %}
+        <div class="alert alert-info">
+            <strong>{% trans %}Ergebnis:{% endtrans %}</strong><br>
+            🔌 <strong>{% trans %}Verfügbar:{% endtrans %}</strong> {{ result.available }} W<br>
+            📦 <strong>{% trans %}Anzahl Geräte:{% endtrans %}</strong> {{ result.count }}<br>
+            {% if result.warning %}
+            <div class="alert alert-warning mt-2">{{ result.warning }}</div>
+            {% endif %}
+        </div>
+        <div class="card mt-3">
+            <div class="card-body">
+                <h6>{% trans %}Hinweise:{% endtrans %}</h6>
+                <ul>
+                    <li>PoE: bis 15,4 W (Gerät erhält 12,95 W)</li>
+                    <li>PoE+: bis 30 W</li>
+                    <li>PoE++: bis 60–90 W</li>
+                    <li>Immer 10–15% Reserve einplanen</li>
+                </ul>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+{% block scripts %}
+<script>
+    document.querySelector('select[name="device_type"]').addEventListener('change', function() {
+    document.getElementById('custom-power').style.display = this.value === 'custom' ? 'block' : 'none';
+});
+// Scroll vers la fin après un nouveau calcul
+setTimeout(() => {
+    const slider = document.getElementById('recentSlider');
+    if (slider) {
+        slider.scrollLeft = slider.scrollWidth;
+    }
+}, 500);
+</script>
+{% endblock %}
+{% endblock %}
+

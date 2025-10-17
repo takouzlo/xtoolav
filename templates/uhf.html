@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{% trans %}UHF-Kanalplaner{% endtrans %}</h2>
+<p>{% trans %}Freie UHF-Kanäle für kabellose Mikrofone (Europa).{% endtrans %}</p>
+
+<div class="alert alert-warning">
+    <strong>{% trans %}Hinweis:{% endtrans %}</strong> 
+    {% trans %}Bereich 470–790 MHz. 5G ab 700 MHz berücksichtigen.{% endtrans %}
+</div>
+
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Kanal</th>
+                <th>Frequenz (MHz)</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for chan in uhf_channels %}
+            <tr class="{% if chan.freq > 700 %}table-danger{% else %}table-success{% endif %}">
+                <td>{{ chan.ch }}</td>
+                <td>{{ chan.freq }}</td>
+                <td>
+                    {% if chan.freq > 700 %}
+                        🔴 5G Bereich
+                    {% else %}
+                        🟢 Frei
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{% trans %}Pinouts & Brochages{% endtrans %}</h2>
+<p>{% trans %}Häufig verwendete Anschlüsse in AV-Installationen.{% endtrans %}</p>
+
+<ul class="nav nav-tabs" id="pinoutTabs">
+    <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#xlr">XLR 3-polig</a></li>
+    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#rj45">RJ45 (T568B)</a></li>
+    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#bnc">BNC (SDI)</a></li>
+    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#dante">Dante (Netzwerk)</a></li>
+</ul>
+
+<div class="tab-content bg-white p-4 border border-top-0 rounded">
+    <!-- XLR 3-polig -->
+    <div class="tab-pane active" id="xlr">
+        <h5>XLR 3-polig (Männlich & Weiblich)</h5>
+        <table class="table table-sm">
+            <thead>
+                <tr><th>PIN</th><th>Name</th><th>Farbe (üblich)</th><th>Funktion</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>Sleeve</td><td>Schwarz / Weiß</td><td>Masse (GND)</td></tr>
+                <tr><td>2</td><td>Tip</td><td>Rot</td><td>Signal+</td></tr>
+                <tr><td>3</td><td>Ring</td><td>Weiß / Grün</td><td>Signal−</td></tr>
+            </tbody>
+        </table>
+        <p><strong>{% trans %}Tipp:{% endtrans %}</strong> {% trans %}XLR wird für Mikrofone, Line- und Lautsprecher (4/5-polig) verwendet.{% endtrans %}</p>
+    </div>
+
+    <!-- RJ45 T568B -->
+    <div class="tab-pane" id="rj45">
+        <h5>RJ45 – T568B (Standard)</h5>
+        <table class="table table-sm">
+            <thead>
+                <tr><th>PIN</th><th>Farbe</th><th>Verwendung</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>Orange-Weiß</td><td>TX+ (Senden)</td></tr>
+                <tr><td>2</td><td>Orange</td><td>TX−</td></tr>
+                <tr><td>3</td><td>Grün-Weiß</td><td>RX+ (Empfangen)</td></tr>
+                <tr><td>4</td><td>Blau</td><td>NC oder Strom (PoE)</td></tr>
+                <tr><td>5</td><td>Blau-Weiß</td><td>NC oder Strom (PoE)</td></tr>
+                <tr><td>6</td><td>Grün</td><td>RX−</td></tr>
+                <tr><td>7</td><td>Braun-Weiß</td><td>NC oder Strom (PoE)</td></tr>
+                <tr><td>8</td><td>Braun</td><td>NC oder Strom (PoE)</td></tr>
+            </tbody>
+        </table>
+        <p><strong>{% trans %}Tipp:{% endtrans %}</strong> {% trans %}Für Dante, NDI, PoE und Control-Systeme.{% endtrans %}</p>
+    </div>
+
+    <!-- BNC (SDI) -->
+    <div class="tab-pane" id="bnc">
+        <h5>BNC – SDI Video (1-polig)</h5>
+        <ul>
+            <li><strong>PIN 1:</strong> Mitte – Video-Signal (75 Ω)</li>
+            <li><strong>Mantel:</strong> Masse (Shield)</li>
+        </ul>
+        <p>
+            <strong>{% trans %}Formate:{% endtrans %}</strong><br>
+            SD-SDI (270 Mbps), HD-SDI (1.485 Gbps), 3G-SDI (2.97 Gbps), 12G-SDI<br>
+            <strong>{% trans %}Max. Länge:{% endtrans %}</strong> 100–150m (mit hochwertigem Kabel)
+        </p>
+    </div>
+
+    <!-- Dante -->
+    <div class="tab-pane" id="dante">
+        <h5>Dante (Audio over IP)</h5>
+        <p>{% trans %}Dante verwendet Standard-Ethernet (RJ45). Kein spezielles Pinout – aber stabiles Netzwerk erforderlich.{% endtrans %}</p>
+        <ul>
+            <li><strong>{% trans %}Protokoll:{% endtrans %}</strong> Layer 3, Multicast</li>
+            <li><strong>{% trans %}Ports:{% endtrans %}</strong> UDP 5004, 8080, 1950</li>
+            <li><strong>{% trans %}Switch:{% endtrans %}</strong> LLDP, IGMP Snooping, QoS (DSCP)</li>
+            <li><strong>{% trans %}Kabel:{% endtrans %}</strong> Cat6a empfohlen für 48+ Kanäle</li>
+        </ul>
+        <p><strong>{% trans %}Tipp:{% endtrans %}</strong> {% trans %}Immer Firmware aktuell halten und VLANs für Audio verwenden.{% endtrans %}</p>
+    </div>
+</div>
+
+{% block scripts %}
+<script>
+// Scroll vers la fin après un nouveau calcul
+setTimeout(() => {
+    const slider = document.getElementById('recentSlider');
+    if (slider) {
+        slider.scrollLeft = slider.scrollWidth;
+    }
+}, 500);
+</script>
+{% endblock %}
+{% endblock %}

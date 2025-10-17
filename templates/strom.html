@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{% trans %}Stromrechner (Leistung → Strom){% endtrans %}</h2>
+<p>{% trans %}Berechnen Sie den Stromverbrauch, Kabelquerschnitt und Sicherung für AV-Geräte.{% endtrans %}</p>
+
+<div class="row">
+    <div class="col-md-6">
+        <form method="POST" class="bg-white p-4 border rounded">
+            <div class="mb-3">
+                <label class="form-label">{% trans %}Leistung (W){% endtrans %}</label>
+                <input type="number" name="power" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">{% trans %}Spannung (V){% endtrans %}</label>
+                <input type="number" name="voltage" value="230" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">{% trans %}Phasen{% endtrans %}</label>
+                <select name="phases" class="form-select">
+                    <option value="single">{% trans %}Einphasig (230V){% endtrans %}</option>
+                    <option value="three">{% trans %}Dreiphasig (400V){% endtrans %}</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">{% trans %}Berechnen{% endtrans %}</button>
+        </form>
+    </div>
+    <div class="col-md-6">
+        {% if result %}
+        <div class="alert alert-success">
+            <strong>{% trans %}Ergebnis:{% endtrans %}</strong><br>
+            🔌 <strong>{% trans %}Strom:{% endtrans %}</strong> {{ result.current }}<br>
+            📦 <strong>{% trans %}Typ:{% endtrans %}</strong> {{ result.type }}<br>
+            🔁 <strong>{% trans %}Sicherung:{% endtrans %}</strong> {{ result.fuse }}<br>
+            🧵 <strong>{% trans %}Kabel:{% endtrans %}</strong> {{ result.cable }}
+        </div>
+        <div class="card mt-3">
+            <div class="card-body">
+                <h6>{% trans %}Hinweise:{% endtrans %}</h6>
+                <ul>
+                    <li>DE: Standard 230V / 50Hz</li>
+                    <li>Für Racks: Max. 16A pro Steckdosenleiste</li>
+                    <li>Immer 20% Reserve einplanen</li>
+                </ul>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% block scripts %}
+<script>
+// Scroll vers la fin après un nouveau calcul
+setTimeout(() => {
+    const slider = document.getElementById('recentSlider');
+    if (slider) {
+        slider.scrollLeft = slider.scrollWidth;
+    }
+}, 500);
+</script>
+{% endblock %}
+{% endblock %}
+

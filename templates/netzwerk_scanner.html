@@ -1,0 +1,192 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{% trans %}Netzwerk-Scanner{% endtrans %}</h2>
+<p>{% trans %}Wählen Sie ein Netzwerk aus oder geben Sie es manuell ein.{% endtrans %}</p>
+
+<form method="POST" class="bg-white p-4 border rounded mb-4" id="scanForm">
+    <div class="mb-3">
+        <label class="form-label">{% trans %}Netzwerk{% endtrans %}</label>
+        <select name="subnet" class="form-select mb-2" id="subnetSelect">
+            <option value="" {% if not subnet or manual_subnet %}selected{% endif %}>
+                {% trans %}Manuell eingeben{% endtrans %}
+            </option>
+            {% for iface in interfaces %}
+            <option value="{{ iface.subnet }}" {% if iface.subnet == subnet and not manual_subnet %}selected{% endif %}>
+                {{ iface.name }} → {{ iface.subnet }} ({{ iface.ip }})
+            </option>
+            {% endfor %}
+        </select>
+        <input type="text"
+               name="manual_subnet"
+               id="manualSubnet"
+               value="{{ manual_subnet }}"
+               class="form-control"
+               placeholder="z.B. 192.168.1.0/24">
+    </div>
+
+    <div class="d-flex gap-2">
+        <button type="submit" class="btn btn-primary" id="submitBtn">
+            🔍 {% trans %}Scan starten{% endtrans %}
+        </button>
+        {% if scanning %}
+            <a href="{{ url_for('netzwerk_scanner') }}" class="btn btn-secondary">
+                ⏹️ {% trans %}Neu starten{% endtrans %}
+            </a>
+        {% endif %}
+    </div>
+</form>
+
+<!-- Résultats -->
+<div id="results">
+    <div class="table-responsive">
+        <table class="table table-striped table-hover">
+            <thead class="table-primary">
+                <tr>
+                    <th>IP</th>
+                    <th>{% trans %}Hostname{% endtrans %}</th>
+                    <th>MAC</th>
+                    <th>{% trans %}Status{% endtrans %}</th>
+                </tr>
+            </thead>
+            <tbody id="devicesBody">
+                <!-- Ici, les appareils seront ajoutés dynamiquement -->
+                {% for dev in devices %}
+                <tr>
+                    <td><code>{{ dev.ip }}</code></td>
+                    <td>{{ dev.hostname }}</td>
+                    <td><code>{{ dev.mac }}</code></td>
+                    <td>{{ dev.status }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Message si pas de résultats ET pas en scan -->
+    {% if not devices and not scanning and request.method == 'POST' %}
+    <div class="alert alert-info">{% trans %}Keine Geräte gefunden.{% endtrans %}</div>
+    {% endif %}
+
+    <!-- Progressbar -->
+    {% if scanning %}
+    <div class="alert alert-info">
+        <div class="d-flex align-items-center mb-2">
+            <div class="spinner-border spinner-border-sm me-2" role="status"></div>
+            <strong>{% trans %}Scan läuft...{% endtrans %}</strong>
+        </div>
+        <div class="progress" style="height: 25px;">
+            <div id="progressBar" class="progress-bar bg-info" role="progressbar"
+                 style="width: {{ (progress.current / progress.total * 100) if progress.total > 0 else 0 }}%;">
+                {{ progress.current }} / {{ progress.total }}
+            </div>
+        </div>
+    </div>
+
+    <p class="text-success">
+        <strong>
+            ✅ <span id="deviceCount">{{ devices|length }}</span> {% trans %}Geräte gefunden{% endtrans %}
+        </strong>
+        <span id="scanningHint" class="text-muted" style="display: none;">
+            {% trans %}(Scan läuft... bitte warten){% endtrans %}
+        </span>
+    </p>
+
+    {% elif not scanning and request.method == 'POST' %}
+        <div class="alert alert-info">{% trans %}Keine Geräte gefunden.{% endtrans %}</div>
+    {% endif %}
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+
+// Attends que tout le DOM soit chargé
+document.addEventListener('DOMContentLoaded', function() {
+    console.log("📄 DOM chargé");
+
+    function updateSubnetInput() {
+        const select = document.getElementById('subnetSelect');
+        const input = document.getElementById('manualSubnet');
+        if (!select || !input) return;
+        if (select.value === '') {
+            input.disabled = false;
+            input.focus();
+        } else {
+            input.disabled = true;
+        }
+    }
+
+    function fetchUpdates() {
+        const devicesBody = document.getElementById('devicesBody');
+        const progressBar = document.getElementById('progressBar');
+
+        if (!devicesBody || !progressBar) {
+            console.warn("⚠️ Pas encore prêt. Nouvel essai dans 1s.");
+            setTimeout(fetchUpdates, 1000);
+            return;
+        }
+
+        fetch(`{{ url_for('get_scan_updates') }}?scan_id={{ scan_id }}`)
+            .then(r => r.json())
+            .then(data => {
+                console.log("📊 Données reçues:", data);
+
+
+                // Ajouter les nouveaux appareils
+                data.new_devices.forEach(dev => {
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `
+                        <td><code>${dev.ip}</code></td>
+                        <td>${dev.hostname}</td>
+                        <td><code>${dev.mac}</code></td>
+                        <td>${dev.status}</td>
+                    `;
+                    devicesBody.appendChild(tr);
+                });
+
+                // ✅ Mettre à jour le compteur en temps réel
+                const countEl = document.getElementById('deviceCount');
+                if (countEl) {
+                    countEl.textContent = devicesBody.children.length;
+                }
+
+                // Mettre à jour la barre
+                const pct = (data.progress.current / data.progress.total) * 100;
+                progressBar.style.width = pct + '%';
+                progressBar.textContent = `${data.progress.current} / ${data.progress.total}`;
+
+                if (!data.progress.done) {
+                    setTimeout(fetchUpdates, 1000);
+                } else {
+                    document.getElementById('submitBtn').disabled = false;
+                }
+
+                // Quand le scan termine
+                if (data.progress.done) {
+                    document.getElementById('scanningHint').style.display = 'none';
+                }
+            })
+            .catch(err => {
+                console.error("❌ Erreur:", err);
+                setTimeout(fetchUpdates, 5000);
+            });
+    }
+
+    // ✅ Attacher l'évènement proprement
+    const select = document.getElementById('subnetSelect');
+    if (select) {
+        select.addEventListener('change', updateSubnetInput);
+    }
+    updateSubnetInput(); // Initialiser
+
+    // ... reste de fetchUpdates()
+    {% if scanning %}
+        document.getElementById('submitBtn').disabled = true;
+        setTimeout(fetchUpdates, 1000);
+    {% endif %}
+
+});
+</script>
+{% endblock %}
+

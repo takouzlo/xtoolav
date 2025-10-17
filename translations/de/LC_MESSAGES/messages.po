@@ -1,0 +1,331 @@
+# German translations for mttools.
+# Copyright (C) 2025 Arno
+# This file is distributed under the same license as the mttools project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: mttools 1.0\n"
+"Report-Msgid-Bugs-To: arno@entreprise.de\n"
+"POT-Creation-Date: 2025-04-05 10:00+0100\n"
+"PO-Revision-Date: 2025-04-05 10:00+0100\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: de\n"
+"Language-Team: de <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.14.0\n"
+
+#: app.py:28
+msgid "Bitte melden Sie sich an, um fortzufahren."
+msgstr "Bitte melden Sie sich an, um fortzufahren."
+
+#: app.py:75 templates/auth/login.html:5
+msgid "Anmelden"
+msgstr "Anmelden"
+
+#: app.py:75
+msgid "Erfolgreich eingeloggt!"
+msgstr "Erfolgreich eingeloggt!"
+
+#: app.py:77
+msgid "Benutzername oder Passwort falsch."
+msgstr "Benutzername oder Passwort falsch."
+
+#: app.py:96 templates/auth/register.html:5
+msgid "Registrieren"
+msgstr "Registrieren"
+
+#: app.py:103
+msgid "Benutzername bereits vergeben."
+msgstr "Benutzername bereits vergeben."
+
+#: app.py:106
+msgid "E-Mail bereits registriert."
+msgstr "E-Mail bereits registriert."
+
+#: app.py:110
+msgid "Registrierung erfolgreich! Sie können sich jetzt anmelden."
+msgstr "Registrierung erfolgreich! Sie können sich jetzt anmelden."
+
+#: app.py:118
+msgid "Sie wurden erfolgreich abgemeldet."
+msgstr "Sie wurden erfolgreich abgemeldet."
+
+#: templates/base.html:18
+msgid "Dashboard"
+msgstr "Dashboard"
+
+#: templates/base.html:19
+msgid "Abmelden"
+msgstr "Abmelden"
+
+#: templates/dashboard.html:3
+msgid "Willkommen bei mttools"
+msgstr "Willkommen bei mttools"
+
+#: templates/dashboard.html:4
+msgid "Ihr Werkzeugkasten für AV-Installationen in Konferenzräumen."
+msgstr "Ihr Werkzeugkasten für AV-Installationen in Konferenzräumen."
+
+#: templates/dashboard.html:9
+msgid "Konverter"
+msgstr "Konverter"
+
+#: templates/dashboard.html:10
+msgid "Auflösungen, Kabel, NDI-Bandbreite"
+msgstr "Auflösungen, Kabel, NDI-Bandbreite"
+
+#: templates/dashboard.html:14
+msgid "Audio-Rechner"
+msgstr "Audio-Rechner"
+
+#: templates/dashboard.html:15
+msgid "dB, Lautstärke, Empfindlichkeit"
+msgstr "dB, Lautstärke, Empfindlichkeit"
+
+#: templates/dashboard.html:19
+msgid "Pinouts"
+msgstr "Pinouts"
+
+#: templates/dashboard.html:20
+msgid "XLR, RJ45, BNC Belegung"
+msgstr "XLR, RJ45, BNC Belegung"
+
+#: templates/converter.html:2
+msgid "AV-Konverter & Bandbreite"
+msgstr "AV-Konverter & Bandbreite"
+
+#: templates/converter.html:3
+msgid "Hilfe bei HDMI, NDI und Kabeln für Konferenzräume."
+msgstr "Hilfe bei HDMI, NDI und Kabeln für Konferenzräume."
+
+#: templates/converter.html:38
+msgid "Für 4K60 benötigen Sie HDMI 2.0 oder höher und zertifiziertes Kabel (High Speed)."
+msgstr "Für 4K60 benötigen Sie HDMI 2.0 oder höher und zertifiziertes Kabel (High Speed)."
+
+#: templates/converter.html:49
+msgid "Tipp:"
+msgstr "Tipp:"
+
+#: templates/converter.html:50
+msgid "Immer Shielded (S/FTP) in industriellen Umgebungen verwenden."
+msgstr "Immer Shielded (S/FTP) in industriellen Umgebungen verwenden."
+
+#: templates/audio.html:2
+msgid "Audio-Rechner (dB)"
+msgstr "Audio-Rechner (dB)"
+
+#: templates/audio.html:3
+msgid "Berechnen Sie den Schalldruckpegel (SPL) basierend auf Lautsprecherleistung und Entfernung."
+msgstr "Berechnen Sie den Schalldruckpegel (SPL) basierend auf Lautsprecherleistung und Entfernung."
+
+#: templates/audio.html:11
+msgid "Sensibilität (dB/W/m)"
+msgstr "Sensibilität (dB/W/m)"
+
+#: templates/audio.html:15
+msgid "Leistung (W)"
+msgstr "Leistung (W)"
+
+#: templates/audio.html:19
+msgid "Entfernung (m)"
+msgstr "Entfernung (m)"
+
+#: templates/audio.html:22
+msgid "Berechnen"
+msgstr "Berechnen"
+
+#: templates/audio.html:39
+msgid "Referenzwerte:"
+msgstr "Referenzwerte:"
+
+msgid "Flüstern"
+msgstr "Flüstern"
+
+msgid "Gespräch"
+msgstr "Gespräch"
+
+msgid "Längerer Schutz notwendig"
+msgstr "Längerer Schutz notwendig"
+
+msgid "Konzert"
+msgstr "Konzert"
+
+msgid "Schmerzgrenze"
+msgstr "Schmerzgrenze"
+
+#: templates/converter.html:29
+msgid "Berechnen"
+msgstr "Berechnen"
+
+
+msgid "Stromrechner (Leistung → Strom)"
+msgstr "Stromrechner (Leistung → Strom)"
+
+msgid "Berechnen Sie den Stromverbrauch, Kabelquerschnitt und Sicherung für AV-Geräte."
+msgstr "Berechnen Sie den Stromverbrauch, Kabelquerschnitt und Sicherung für AV-Geräte."
+
+msgid "Leistung (W)"
+msgstr "Leistung (W)"
+
+msgid "Spannung (V)"
+msgstr "Spannung (V)"
+
+msgid "Phasen"
+msgstr "Phasen"
+
+msgid "Einphasig (230V)"
+msgstr "Einphasig (230V)"
+
+msgid "Dreiphasig (400V)"
+msgstr "Dreiphasig (400V)"
+
+msgid "Berechnen"
+msgstr "Berechnen"
+
+msgid "Ergebnis:"
+msgstr "Ergebnis:"
+
+msgid "Strom:"
+msgstr "Strom:"
+
+msgid "Typ:"
+msgstr "Typ:"
+
+msgid "Sicherung:"
+msgstr "Sicherung:"
+
+msgid "Kabel:"
+msgstr "Kabel:"
+
+msgid "Hinweise:"
+msgstr "Hinweise:"
+
+msgid "PoE-Leistungsrechner"
+msgstr "PoE-Leistungsrechner"
+
+msgid "Wie viele Geräte können über Power over Ethernet (PoE) betrieben werden?"
+msgstr "Wie viele Geräte können über Power over Ethernet (PoE) betrieben werden?"
+
+msgid "Switch-Typ / Gesamtleistung"
+msgstr "Switch-Typ / Gesamtleistung"
+
+msgid "Gerätetyp"
+msgstr "Gerätetyp"
+
+msgid "Benutzerdefiniert"
+msgstr "Benutzerdefiniert"
+
+msgid "Eigene Leistung (W)"
+msgstr "Eigene Leistung (W)"
+
+msgid "Verfügbar:"
+msgstr "Verfügbar:"
+
+msgid "Anzahl Geräte:"
+msgstr "Anzahl Geräte:"
+
+msgid "Sichtabstand-Rechner"
+msgstr "Sichtabstand-Rechner"
+
+msgid "Optimale Sehdistanz für Monitore und Projektionsflächen."
+msgstr "Optimale Sehdistanz für Monitore und Projektionsflächen."
+
+msgid "Bildschirmgröße (Zoll)"
+msgstr "Bildschirmgröße (Zoll)"
+
+msgid "Empfohlener Sichtabstand:"
+msgstr "Empfohlener Sichtabstand:"
+
+msgid "Min:"
+msgstr "Min:"
+
+msgid "Ideal:"
+msgstr "Ideal:"
+
+msgid "Max:"
+msgstr "Max:"
+
+msgid "Richtlinien:"
+msgstr "Richtlinien:"
+
+msgid "Bilddiagonalen-Rechner"
+msgstr "Bilddiagonalen-Rechner"
+
+msgid "Berechnen Sie Breite, Höhe und Diagonale von Bildschirmen und Projektionsflächen."
+msgstr "Berechnen Sie Breite, Höhe und Diagonale von Bildschirmen und Projektionsflächen."
+
+msgid "Seitenverhältnis"
+msgstr "Seitenverhältnis"
+
+msgid "Diagonale"
+msgstr "Diagonale"
+
+msgid "Breite"
+msgstr "Breite"
+
+msgid "Höhe"
+msgstr "Höhe"
+
+msgid "Berechnen"
+msgstr "Berechnen"
+
+msgid "Zurücksetzen"
+msgstr "Zurücksetzen"
+
+msgid "Ergebnis:"
+msgstr "Ergebnis:"
+
+msgid "Bitte geben Sie einen Wert ein."
+msgstr "Bitte geben Sie einen Wert ein."
+
+msgid "Umrechnung cm/Zoll, Breite/Höhe"
+msgstr "Umrechnung cm/Zoll, Breite/Höhe"
+
+msgid "Bildschirmgröße"
+msgstr "Bildschirmgröße"
+
+msgid "ASCII-Decodierer"
+msgstr "Décodeur ASCII"
+
+msgid "Konvertieren Sie ein Zeichen in DEC, HEX, OCT, ASCII und HTML-Entity."
+msgstr "Convertir un caractère en DÉC, HEX, OCT, ASCII et entité HTML."
+
+msgid "Zeichen eingeben"
+msgstr "Saisir un caractère"
+
+msgid "Decodieren"
+msgstr "Décoder"
+
+msgid "Ergebnis für '"
+msgstr "Résultat pour '"
+
+msgid "Name:"
+msgstr "Nom :"
+
+msgid "Häufig verwendete Steuerzeichen"
+msgstr "Caractères de contrôle courants"
+
+msgid "Dante Assistant"
+msgstr "Assistant Dante"
+
+msgid "Automatische Erkennung von Dante-Geräten im Netzwerk."
+msgstr "Détection automatique des périphériques Dante sur le réseau."
+
+msgid "Keine Geräte gefunden oder dante-discover nicht installiert."
+msgstr "Aucun appareil trouvé ou dante-discover non installé."
+
+msgid "Tipp: Stellen Sie sicher, dass dante-discover im PATH ist oder Dante Controller installiert ist."
+msgstr "Astuce : assurez-vous que dante-discover est dans le PATH ou que Dante Controller est installé."
+
+msgid "Dante-Bericht exportieren"
+msgstr "Exporter le rapport Dante"
+
+msgid "Keine Dante-Geräte gefunden. Stellen Sie sicher, dass sich Geräte im selben Subnetz befinden."
+msgstr "Aucun périphérique Dante trouvé. Vérifiez qu'ils sont sur le même sous-réseau."
+
+msgid "Hinweise:"
+msgstr "Remarques :"

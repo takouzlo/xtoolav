@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{% trans %}ASCII-Decodierer{% endtrans %}</h2>
+<p>{% trans %}Konvertieren Sie ein Zeichen in DEC, HEX, OCT, ASCII und HTML-Entity.{% endtrans %}</p>
+
+<form method="POST" class="bg-white p-4 border rounded mb-4">
+    <div class="mb-3">
+        <label class="form-label">{% trans %}Zeichen eingeben{% endtrans %} (1)</label>
+        <input type="text"
+               name="char"
+               maxlength="1"
+               value="{{ char_input }}"
+               class="form-control"
+               required
+               autofocus>
+    </div>
+    <button type="submit" class="btn btn-primary">{% trans %}Decodieren{% endtrans %}</button>
+</form>
+
+{% if result %}
+<div class="alert alert-success">
+    <strong>{% trans %}Ergebnis für '{% endtrans %}{{ result.char }}' :</strong>
+    <ul class="mt-2">
+        <li><strong>DEC:</strong> {{ result.dec }}</li>
+        <li><strong>HEX:</strong> {{ result.hex }} (0x{{ result.hex }})</li>
+        <li><strong>OCT:</strong> {{ result.oct }} (0o{{ result.oct }})</li>
+        <li><strong>HTML:</strong> <code>{{ result.html }}</code></li>
+        <li><strong>{% trans %}Name:{% endtrans %}</strong> {{ result.name }}</li>
+    </ul>
+</div>
+{% endif %}
+
+<!-- Référence rapide -->
+<div class="card mt-4">
+    <div class="card-body">
+        <h5 class="card-title">📚 {% trans %}Häufig verwendete Steuerzeichen{% endtrans %}</h5>
+        <table class="table table-sm">
+            <thead>
+                <tr>
+                    <th>Zeichen</th>
+                    <th>DEC</th>
+                    <th>HEX</th>
+                    <th>Beschreibung</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><code>LF</code></td><td>10</td><td>0A</td><td>Line Feed (Neue Zeile)</td></tr>
+                <tr><td><code>CR</code></td><td>13</td><td>0D</td><td>Carriage Return</td></tr>
+                <tr><td><code>ESC</code></td><td>27</td><td>1B</td><td>Escape (Steuersequenz)</td></tr>
+                <tr><td><code>NUL</code></td><td>0</td><td>00</td><td>Null-Zeichen</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

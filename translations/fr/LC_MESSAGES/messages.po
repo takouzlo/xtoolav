@@ -1,0 +1,272 @@
+# French translations for mttools.
+# Copyright (C) 2025 Arno
+# This file is distributed under the same license as the mttools project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: mttools 1.0\n"
+"Report-Msgid-Bugs-To: arno@entreprise.de\n"
+"POT-Creation-Date: 2025-04-05 10:00+0100\n"
+"PO-Revision-Date: 2025-04-05 10:00+0100\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.14.0\n"
+
+#: app.py:28
+msgid "Bitte melden Sie sich an, um fortzufahren."
+msgstr "Veuillez vous connecter pour continuer."
+
+#: app.py:75
+msgid "Erfolgreich eingeloggt!"
+msgstr "Connecté avec succès !"
+
+#: app.py:77
+msgid "Benutzername oder Passwort falsch."
+msgstr "Nom d'utilisateur ou mot de passe incorrect."
+
+#: app.py:96
+msgid "Registrierung erfolgreich! Sie können sich jetzt anmelden."
+msgstr "Inscription réussie ! Vous pouvez maintenant vous connecter."
+
+#: app.py:103
+msgid "Benutzername bereits vergeben."
+msgstr "Nom d'utilisateur déjà pris."
+
+#: app.py:106
+msgid "E-Mail bereits registriert."
+msgstr "E-mail déjà enregistré."
+
+#: app.py:118
+msgid "Sie wurden erfolgreich abgemeldet."
+msgstr "Vous avez été déconnecté avec succès."
+
+#: templates/base.html:18
+msgid "Dashboard"
+msgstr "Tableau de bord"
+
+#: templates/base.html:19
+msgid "Abmelden"
+msgstr "Se déconnecter"
+
+#: templates/dashboard.html:3
+msgid "Willkommen bei mttools"
+msgstr "Bienvenue sur mttools"
+
+#: templates/dashboard.html:4
+msgid "Ihr Werkzeugkasten für AV-Installationen in Konferenzräumen."
+msgstr "Votre boîte à outils pour les installations audiovisuelles en salles de conférence."
+
+#: templates/dashboard.html:9
+msgid "Konverter"
+msgstr "Convertisseur"
+
+#: templates/dashboard.html:10
+msgid "Auflösungen, Kabel, NDI-Bandbreite"
+msgstr "Résolutions, câbles, bande passante NDI"
+
+#: templates/dashboard.html:14
+msgid "Audio-Rechner"
+msgstr "Calculateur audio"
+
+#: templates/dashboard.html:15
+msgid "dB, Lautstärke, Empfindlichkeit"
+msgstr "dB, volume, sensibilité"
+
+#: templates/dashboard.html:19
+msgid "Pinouts"
+msgstr "Brochages"
+
+#: templates/dashboard.html:20
+msgid "XLR, RJ45, BNC Belegung"
+msgstr "Brochages XLR, RJ45, BNC"
+
+#: templates/converter.html:2
+msgid "AV-Konverter & Bandbreite"
+msgstr "Convertisseur AV et bande passante"
+
+#: templates/converter.html:3
+msgid "Hilfe bei HDMI, NDI und Kabeln für Konferenzräume."
+msgstr "Aide pour HDMI, NDI et câbles en salles de conférence."
+
+#: templates/converter.html:38
+msgid "Für 4K60 benötigen Sie HDMI 2.0 oder höher und zertifiziertes Kabel (High Speed)."
+msgstr "Pour du 4K60, vous avez besoin d'HDMI 2.0 ou supérieur et d'un câble certifié (High Speed)."
+
+#: templates/converter.html:49
+msgid "Tipp:"
+msgstr "Astuce :"
+
+#: templates/converter.html:50
+msgid "Immer Shielded (S/FTP) in industriellen Umgebungen verwenden."
+msgstr "Utilisez toujours du câble blindé (S/FTP) en environnement industriel."
+
+#: templates/audio.html:2
+msgid "Audio-Rechner (dB)"
+msgstr "Calculateur audio (dB)"
+
+#: templates/audio.html:3
+msgid "Berechnen Sie den Schalldruckpegel (SPL) basierend auf Lautsprecherleistung und Entfernung."
+msgstr "Calculez le niveau sonore (SPL) selon la puissance de l'enceinte et la distance."
+
+#: templates/audio.html:11
+msgid "Sensibilität (dB/W/m)"
+msgstr "Sensibilité (dB/W/m)"
+
+#: templates/audio.html:15
+msgid "Leistung (W)"
+msgstr "Puissance (W)"
+
+#: templates/audio.html:19
+msgid "Entfernung (m)"
+msgstr "Distance (m)"
+
+#: templates/audio.html:22
+msgid "Berechnen"
+msgstr "Calculer"
+
+#: templates/audio.html:22
+msgid "Berechnen"
+msgstr "Calculer"
+
+#: templates/audio.html:39
+msgid "Referenzwerte:"
+msgstr "Niveaux de référence :"
+
+msgid "Flüstern"
+msgstr "Chuchotement"
+
+msgid "Gespräch"
+msgstr "Conversation"
+
+msgid "Längerer Schutz notwendig"
+msgstr "Protection longue durée nécessaire"
+
+msgid "Konzert"
+msgstr "Concert"
+
+msgid "Schmerzgrenze"
+msgstr "Seuil de douleur"
+
+msgid "Stromrechner (Leistung → Strom)"
+msgstr "Calculateur de courant (Puissance → Courant)"
+
+msgid "Berechnen Sie den Stromverbrauch, Kabelquerschnitt und Sicherung für AV-Geräte."
+msgstr "Calculez la consommation, la section de câble et la protection pour les équipements AV."
+
+msgid "Phasen"
+msgstr "Phases"
+
+msgid "Einphasig (230V)"
+msgstr "Monophasé (230V)"
+
+msgid "Dreiphasig (400V)"
+msgstr "Triphasé (400V)"
+
+msgid "Ergebnis:"
+msgstr "Résultat :"
+
+msgid "Strom:"
+msgstr "Courant :"
+
+msgid "Typ:"
+msgstr "Type :"
+
+msgid "Sicherung:"
+msgstr "Fusible :"
+
+msgid "Kabel:"
+msgstr "Câble :"
+
+msgid "Hinweise:"
+msgstr "Remarques :"
+
+
+msgid "PoE-Leistungsrechner"
+msgstr "Calculateur PoE"
+
+msgid "Wie viele Geräte können über Power over Ethernet (PoE) betrieben werden?"
+msgstr "Combien d'appareils peuvent être alimentés en PoE ?"
+
+msgid "Switch-Typ / Gesamtleistung"
+msgstr "Type de switch / Puissance totale"
+
+msgid "Gerätetyp"
+msgstr "Type d'appareil"
+
+msgid "Benutzerdefiniert"
+msgstr "Personnalisé"
+
+msgid "Eigene Leistung (W)"
+msgstr "Puissance personnalisée (W)"
+
+msgid "Verfügbar:"
+msgstr "Disponible :"
+
+msgid "Anzahl Geräte:"
+msgstr "Nombre d'appareils :"
+
+msgid "Sichtabstand-Rechner"
+msgstr "Calculateur de distance de vision"
+
+msgid "Optimale Sehdistanz für Monitore und Projektionsflächen."
+msgstr "Distance optimale pour écrans et surfaces de projection."
+
+msgid "Bildschirmgröße (Zoll)"
+msgstr "Taille de l'écran (pouces)"
+
+msgid "Empfohlener Sichtabstand:"
+msgstr "Distance de vision recommandée :"
+
+msgid "Min:"
+msgstr "Min :"
+
+msgid "Ideal:"
+msgstr "Idéal :"
+
+msgid "Max:"
+msgstr "Max :"
+
+msgid "Richtlinien:"
+msgstr "Recommandations :"
+
+msgid "Bilddiagonalen-Rechner"
+msgstr "Calculateur de taille d'écran"
+
+msgid "Berechnen Sie Breite, Höhe und Diagonale von Bildschirmen und Projektionsflächen."
+msgstr "Calculez largeur, hauteur et diagonale des écrans et surfaces de projection."
+
+msgid "Seitenverhältnis"
+msgstr "Format d'image"
+
+msgid "Diagonale"
+msgstr "Diagonale"
+
+msgid "Breite"
+msgstr "Largeur"
+
+msgid "Höhe"
+msgstr "Hauteur"
+
+msgid "Berechnen"
+msgstr "Calculer"
+
+msgid "Zurücksetzen"
+msgstr "Réinitialiser"
+
+msgid "Ergebnis:"
+msgstr "Résultat :"
+
+msgid "Bitte geben Sie einen Wert ein."
+msgstr "Veuillez entrer une valeur."
+
+msgid "Umrechnung cm/Zoll, Breite/Höhe"
+msgstr "Conversion cm/pouces, largeur/hauteur"
+
+msgid "Bildschirmgröße"
+msgstr "Taille écran"
