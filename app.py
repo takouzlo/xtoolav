@@ -40,9 +40,26 @@ config = pdfkit.configuration(wkhtmltopdf=Config.WKHTMLTOPDF_PATH)
 
 
 def get_locale():
-    if current_user.is_authenticated:
-        return current_user.language
-    return request.accept_languages.best_match(['de', 'fr'])
+    print("🔍 Recherche de la langue...")
+
+    if 'lang' in session:
+        print(f"✅ Langue depuis session: {session['lang']}")
+        return session['lang']
+
+    try:
+        if hasattr(current_user, 'is_authenticated') and current_user.is_authenticated:
+            lang = current_user.language
+            if lang:
+                session['lang'] = lang
+                print(f"✅ Langue depuis user: {lang}")
+                return lang
+    except Exception as e:
+        print("❌ Erreur user:", e)
+
+    default_lang = request.accept_languages.best_match(['de', 'fr']) or 'de'
+    session['lang'] = default_lang
+    print(f"🌍 Langue par défaut: {default_lang}")
+    return default_lang
 
 
 # Babel pour traduction
@@ -314,13 +331,29 @@ def pinouts():
     return render_template('pinouts.html')
 
 
-@app.route('/language/<lang>')
+@app.route('/setlang/<lang>')
 @login_required
-def change_language(lang):
-    if lang in ['fr', 'de']:
-        current_user.language = lang
-        db.session.commit()
-        session['lang'] = lang
+def set_language(lang):
+    if lang not in ['de', 'fr']:
+        flash(_("Ungültige Sprache"), "error")
+        return redirect(request.referrer or url_for('dashboard'))
+
+    # Mettre à jour l'utilisateur
+    current_user.language = lang
+    db.session.commit()
+
+    # Rafraîchir current_user dans la session
+    login_user(current_user, force=True)  # Force reload
+
+    # Optionnel : sauvegarder en session
+    session['lang'] = lang
+
+    flash(_("Sprache auf {lang} geändert").format(
+        lang="Deutsch" if lang == 'de' else "Français"
+    ), "success")
+
+    print(f"language: {lang}")
+
     return redirect(request.referrer or url_for('dashboard'))
 
 
@@ -968,8 +1001,6 @@ def netzwerk_scanner():
                     progress['done'] = True
                     q.put(('done', None))
 
-
-
                 # Démarrer le thread
                 thread = threading.Thread(target=run_scan, daemon=True)
                 print(f"🔍 SCAN STARTED: {scan_id} | Subnet: {subnet} | IPs: {start} → {end}")
@@ -1030,7 +1061,6 @@ def get_scan_updates():
             break
 
     progress = scan_data.get('progress', {'current': 0, 'total': 1, 'done': True})
-
 
     return {
         'new_devices': new_devices,

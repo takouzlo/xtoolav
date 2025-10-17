@@ -10,12 +10,12 @@ if not os.path.exists(instance_dir):
 #WKHTMLTOPDF_PATH = r'C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe'  # Ajuste si besoin
 WKHTMLTOPDF_PATH = f'{os.path.join(basedir, "wkhtmltopdf\\bin\\wkhtmltopdf.exe")}'
 
+
 # WKHTMLTOPDF_PATH = (
 #     r'C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe'
 #     if os.path.exists(r'C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe') else
-#     r'C:\Program Files (x86)\wkhtmltopdf\bin\wkhtmltopdf.exe'
-# )
-
+#     r'C:\Program Files (x86)\wkhtmltopdf\bin\wkhtmltopdf.exe')
+#
 
 
 class Config:
@@ -24,3 +24,5 @@ class Config:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     LANGUAGES = ['fr', 'de']
     WKHTMLTOPDF_PATH = WKHTMLTOPDF_PATH
+    BABEL_DEFAULT_LOCALE = 'de'
+    BABEL_TRANSLATION_DIRECTORIES = 'translations'
