@@ -1,0 +1,131 @@
+# === Python ===
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+venv3/
+env3/
+.python-version
+pip-log.txt
+pip-delete-this-directory.txt
+.tox
+.coverage
+coverage.xml
+nosetests.xml
+hypothesis/
+.pytest_cache/
+htmlcov/
+
+# === Virtual Environment ===
+venv/
+env/
+ENV/
+.venv/
+.env
+
+# === Flask / App ===
+instance/
+.webassets-cache
+
+# === Fichiers sensibles ===
+config.py
+*.key
+*.pem
+*.crt
+
+# === Base de données ===
+*.sqlite
+*.sqlite3
+.db
+migrations/  # si tu n'utilises pas Flask-Migrate
+
+# === Logs ===
+*.log
+logs/
+*.out
+
+# === OS & Editors ===
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+~$*
+*~
+
+# === IDEs et éditeurs ===
+# VS Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# PyCharm
+.idea/
+*.iml
+*.iws
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list/
+tramp
+.\#*
+
+# Vim
+.*.sw[a-p]
+.sw[a-p]
+*.un~
+Session.vim
+.netrwhist
+*~
+
+# === Build et distribution ===
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# === Fichiers temporaires générés par xtoolav ===
+# (si tu en génères)
+temp/
+tmp/
+
+# === PDF / wkhtmltopdf temp files ===
+*.pdf.tmp
+/static/temp_pdfs/
+
+# === Session ou cache utilisateur local (optionnel) ===
+session_data/
+.cache/
+
+# === Fichiers compilés Babel (les .mo sont générés, mais on peut les inclure si voulus)
+# Décommente cette ligne si tu veux générer les .mo à chaque commit
+# Sinon, laisse-le ici pour les exclure
+# *.mo
+
+# === Pour production (tu peux garder les .mo dans le repo si tu veux) ===
+# Option : Inclure les .mo pour éviter de recompiler à chaque déploiement
+!translations/*/LC_MESSAGES/*.mo
