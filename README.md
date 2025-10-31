@@ -1,7 +1,7 @@
-# xtoolav – Votre boîte à outils AV tout-en-un
+# xtoolav – Votre boîte à outils AV tout-en-un 🛠️
 
 🔧 **xtoolav** est une application web conçue pour les **techniciens audiovisuels** en salles de conférence, auditoriums et installations professionnelles.  
-Elle regroupe tous les outils essentiels en un seul endroit, multilingue, hors-ligne, et évolutif vers un modèle **SaaS freemium**.
+Elle regroupe tous les outils essentiels en un seul endroit, **multilingue**, **hors-ligne**, et **évolution vers SaaS freemium**.
 
 > 💡 Idéal pour les chantiers, support technique, intégrateurs AV.
 
@@ -27,21 +27,32 @@ Elle regroupe tous les outils essentiels en un seul endroit, multilingue, hors-l
 | 🔣 **ASCII Decoder** | DEC, HEX, OCT, HTML entities |
 | 📋 **Historique & Export PDF** | Sauvegarde + rapport exportable |
 | 🌍 **Multilingue (DE/FR)** | Interface adaptée aux techniciens germanophones |
+| ☁️ **Cloud Sync (Basic+)** | Sauvegarde automatique des calculs |
+| 📤 **API REST (Premium)** | Accès programmatique aux outils |
+| 📧 **Notifications email (Premium)** | Envoi automatique de rapports |
+| 🧑‍🔧 **Support prioritaire (Premium)** | Assistance dédiée |
 
 ---
 
 ## 🚀 Modèle Freemium
 
-| Plan | Fonctionnalités |
-|------|----------------|
-| **Free** | Accès de base (calculatrices, convertisseurs) |
-| **Basic (5€/mois)** | + Historique, PDF, réseau, notifications |
-| **Premium (12€/mois)** | + Sync cloud, rapports avancés, API, support prioritaire |
+| Plan | Prix | Fonctionnalités |
+|------|------|----------------|
+| **Free** | Gratuit | Outils de base, historique local |
+| **Basic** | 5€/mois | + Historique cloud, PDF avancé, notifications |
+| **Premium** | 12€/mois | + API REST, notifications email, support prioritaire |
 
 ---
 
-## 🖥️ Mode d'emploi
+## 🖥️ Déploiement
 
+### 🌐 Accès en ligne
+[xtoolav.duckdns.org](https://xtoolav.duckdns.org) – Déjà en ligne !
+
+### 🖥️ Version locale (Windows)
+Téléchargez `xtoolav.exe` dans [releases/](releases/)
+
+### 🧑‍💻 Développement local
 ```bash
 git clone https://github.com/takouzlo/xtoolav.git
 cd xtoolav
