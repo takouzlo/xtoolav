@@ -5,7 +5,7 @@ Elle regroupe tous les outils essentiels en un seul endroit, multilingue, hors-l
 
 > 💡 Idéal pour les chantiers, support technique, intégrateurs AV.
 
-🌐 [Version démo](https://demo.xtoolav.com) | 📄 [Documentation](docs/) | 🚀 [Télécharger .exe](releases/)
+🌐 [Version démo](https://xtoolav.duckdns.org) | 📄 [Documentation](docs/) | 🚀 [Télécharger .exe](releases/)
 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.9%2B-green)](https://python.org)
