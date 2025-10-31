@@ -46,47 +46,47 @@ Elle regroupe tous les outils essentiels en un seul endroit, **multilingue**, **
 
 🧩 Technologies
 
-Backend : Python Flask
+    Backend : Python Flask
 
-Frontend : HTML/CSS/JS + Bootstrap 5
+    Frontend : HTML/CSS/JS + Bootstrap 5
 
-Base de données : SQLite (local) / PostgreSQL (cloud)
+    Base de données : SQLite (local) / PostgreSQL (cloud)
 
-Authentification : Flask-Login
+    Authentification : Flask-Login
 
-Traduction : Flask-Babel
+    Traduction : Flask-Babel
 
-Paiement : Stripe (abonnements)
+    Paiement : Stripe (abonnements)
 
-PDF : pdfkit + wkhtmltopdf
+    PDF : pdfkit + wkhtmltopdf
 
-Offline : Service Worker (PWA)
+    Offline : Service Worker (PWA)
 
 📦 Packaging
 
-✅ .exe autonome (Windows)
+    ✅ .exe autonome (Windows)
 
-✅ .deb (Linux)
+    ✅ .deb (Linux)
 
-✅ Docker (bientôt)
+    ✅ Docker (bientôt)
 
 🤝 Contribution
 
-Toute contribution est la bienvenue !
+    Toute contribution est la bienvenue !
 
-Ouvrez une issue ou une pull request pour :
+    Ouvrez une issue ou une pull request pour :
 
-Ajouter un nouvel outil
+    Ajouter un nouvel outil
 
-Corriger un bug
+    Corriger un bug
 
-Traduire dans une nouvelle langue
+    Traduire dans une nouvelle langue
 
 📬 Contact
 
-📧 xtoolav@gmail.com
+    📧 xtoolav@gmail.com
 
-💼 Pour partenariats, licences ou version entreprise
+    💼 Pour partenariats, licences ou version entreprise
 
 🚀 xtoolav – L’avenir des outils AV intelligents et connectés.
 
