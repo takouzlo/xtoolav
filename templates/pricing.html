@@ -1,0 +1,84 @@
+<!-- templates/pricing.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>{{ _("xtoolav – Abonnement wählen") }}</h2>
+    <p class="lead">{{ _("Wählen Sie Ihren Plan – für Techniker, Teams und Unternehmen.") }}</p>
+
+    <div class="row mt-4">
+        <!-- Free Plan -->
+        <div class="col-md-4">
+            <div class="card text-center h-100">
+                <div class="card-header bg-light">
+                    <h4>{{ _("Free") }}</h4>
+                </div>
+                <div class="card-body">
+                    <h2 class="display-6">€0</h2>
+                    <ul class="list-unstyled">
+                        <li>✅ {{ _("Alle Grundrechner") }}</li>
+                        <li>✅ {{ _("Netzwerktest & Scanner") }}</li>
+                        <li>✅ {{ _("Lokaler Historie") }}</li>
+                        <li>❌ {{ _("Kein Cloud-Sync") }}</li>
+                        <li>❌ {{ _("Keine erweiterten PDFs") }}</li>
+                    </ul>
+                    <p><small class="text-muted">{{ _("Für Einzeltechniker") }}</small></p>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-outline-secondary" disabled>{{ _("Aktuell") }}</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Basic Plan -->
+        <div class="col-md-4">
+            <div class="card text-center border-primary h-100">
+                <div class="card-header text-primary">
+                    <h4>{{ _("Basic") }}</h4>
+                </div>
+                <div class="card-body">
+                    <h2 class="display-6">5€<small>/{{ _("Monat") }}</small></h2>
+                    <ul class="list-unstyled">
+                        <li>✅ {{ _("Alles aus Free") }}</li>
+                        <li>✅ {{ _("Cloud-Synchronisation") }}</li>
+                        <li>✅ {{ _("Erweiterte PDF-Berichte") }}</li>
+                        <li>✅ {{ _("API-Zugriff") }}</li>
+                        <li>❌ {{ _("Support prioritaire") }}</li>
+                    </ul>
+                    <p><small class="text-muted">{{ _("Für kleine Teams") }}</small></p>
+                    <form action="{{ url_for('upgrade_basic') }}" method="post">
+                        <button type="submit" class="btn btn-primary btn-sm">{{ _("Starten") }}</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Premium Plan -->
+        <div class="col-md-4">
+            <div class="card text-center border-success h-100">
+                <div class="card-header text-success">
+                    <h4>{{ _("Premium") }}</h4>
+                </div>
+                <div class="card-body">
+                    <h2 class="display-6">12€<small>/{{ _("Monat") }}</small></h2>
+                    <ul class="list-unstyled">
+                        <li>✅ {{ _("Alles aus Basic") }}</li>
+                        <li>✅ {{ _("Multi-Nutzer-Unterstützung") }}</li>
+                        <li>✅ {{ _("Dante Pro Assistant") }}</li>
+                        <li>✅ {{ _("Support prioritaire") }}</li>
+                        <li>✅ {{ _("Dashboard Admin") }}</li>
+                    </ul>
+                    <p><small class="text-muted">{{ _("Für Firmen & AV-Dienstleister") }}</small></p>
+                    <form action="{{ url_for('upgrade_premium') }}" method="post">
+                        <button type="submit" class="btn btn-success btn-sm">{{ _("Starten") }}</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-4 alert alert-info">
+        <strong>💡</strong> {{ _("Sie nutzen derzeit den Free-Plan. Nach dem Upgrade werden neue Funktionen automatisch freigeschaltet.") }}
+    </div>
+</div>
+{% endblock %}

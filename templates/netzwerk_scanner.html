@@ -29,7 +29,7 @@
             🔍 {% trans %}Scan starten{% endtrans %}
         </button>
         {% if scanning %}
-            <a href="{{ url_for('netzwerk_scanner') }}" class="btn btn-secondary">
+            <a href="{{ url_for('netzwerk_scanner.index') }}" class="btn btn-secondary">
                 ⏹️ {% trans %}Neu starten{% endtrans %}
             </a>
         {% endif %}
@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        fetch(`{{ url_for('get_scan_updates') }}?scan_id={{ scan_id }}`)
+        fetch(`{{ url_for('netzwerk_scanner.updates') }}?scan_id={{ scan_id }}`)
             .then(r => r.json())
             .then(data => {
                 console.log("📊 Données reçues:", data);

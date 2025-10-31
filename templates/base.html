@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mttools - AV Techniker Werkzeug</title>
+    <title>XtoolAV - AV Techniker Werkzeug</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <!-- PWA -->
@@ -23,34 +23,29 @@
     </script>
 </head>
 <body class="bg-light">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark xtoolav-navbar fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="{{ url_for('dashboard') }}">mttools</a>
-            <!-- Dans la navbar, remplace la ligne du username par ceci -->
-            <div class="navbar-nav ms-auto">
+            <a class="navbar-brand d-flex align-items-center" href="{{ url_for('dashboard') }}">
+                <img src="{{ url_for('static', filename='img/logo.png') }}" class="me-2" alt="XtoolAV Logo">
+                <span>XtoolAV</span>
+            </a>
+
+            <div class="navbar-nav ms-auto d-flex align-items-center">
                 {% if current_user.is_authenticated %}
                     <span class="nav-text text-white me-3">👤 {{ current_user.username }}</span>
 
-                    <!-- Bouton Langue -->
+                    <!-- Sélecteur de langue -->
                     <div class="dropdown me-2">
                         <button class="btn btn-sm btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown">
                             {{ '🇩🇪' if current_user.language == 'de' else '🇫🇷' }}
                         </button>
                         <ul class="dropdown-menu">
-                            <li>
-                                <a class="dropdown-item" href="{{ url_for('set_language', lang='de') }}">
-                                    🇩🇪 Deutsch
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="{{ url_for('set_language', lang='fr') }}">
-                                    🇫🇷 Français
-                                </a>
-                            </li>
+                            <li><a class="dropdown-item" href="{{ url_for('set_language', lang='de') }}">🇩🇪 Deutsch</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('set_language', lang='fr') }}">🇫🇷 Français</a></li>
                         </ul>
                     </div>
 
-                    <a class="nav-link" href="{{ url_for('logout') }}">{% trans %}Abmelden{% endtrans %}</a>
+                    <a class="nav-link text-white" href="{{ url_for('logout') }}">{% trans %}Abmelden{% endtrans %}</a>
                 {% endif %}
             </div>
         </div>

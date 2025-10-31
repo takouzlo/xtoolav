@@ -227,7 +227,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Sauvegarde via AJAX
     function saveCalculation(data) {
-        fetch('{{ url_for("save_screen_calculation") }}', {
+        fetch('{{ url_for("screen_size.save_calculation") }}', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)

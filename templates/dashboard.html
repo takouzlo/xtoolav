@@ -1,25 +1,54 @@
 {% extends "base.html" %}
 {% block content %}
-
-<h2>{% trans %}Willkommen bei mttools{% endtrans %}, {{ current_user.username }}!</h2>
+<h2>{% trans %}Willkommen bei xtoolav{% endtrans %}, {{ current_user.username }}!</h2>
 <p class="text-muted">{% trans %}Ihr Werkzeugkasten für AV-Installationen in Konferenzräumen.{% endtrans %}</p>
 
-<!-- Outils principaux -->
-<div class="row row-cols-1 row-cols-md-3 g-4 mt-2">
+<!-- Badge Plan -->
+<div class="alert alert-info d-flex justify-content-between align-items-center">
+    <strong>{{ _("Plan") }}: {{ current_user.plan|upper }}</strong>
+    {% if current_user.plan == 'free' %}
+        <a href="{{ url_for('pricing') }}" class="btn btn-sm btn-warning">{{ _("Upgrade") }}</a>
+    {% elif current_user.plan == 'basic' %}
+        <span class="badge bg-primary">Basic</span>
+    {% elif current_user.plan == 'premium' %}
+        <span class="badge bg-success">Premium</span>
+    {% endif %}
+</div>
+
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-2">
     {% for tool in tools %}
     <div class="col">
         <div class="card h-100 shadow-sm border-light text-center d-flex flex-column">
             <div class="card-body d-flex flex-column">
                 <h5 class="card-title mb-3 text-primary">{{ tool.icon }} {{ tool.title }}</h5>
                 <p class="card-text flex-grow-1 text-secondary">{{ tool.desc }}</p>
-                <a href="{{ tool.url }}" class="btn btn-primary mt-auto btn-sm py-2">Go</a>
+                {% if tool.url != '#' %}
+                    {% if tool.url.startswith(('http://', 'https://')) and not tool.url.startswith(request.url_root) %}
+                        <a href="{{ tool.url }}" class="btn btn-primary mt-auto btn-sm py-2 external-link" target="_blank" rel="noopener">Go</a>
+                    {% else %}
+                        <a href="{{ tool.url }}" class="btn btn-primary mt-auto btn-sm py-2">Go</a>
+                    {% endif %}
+                {% else %}
+                    <a href="{{ url_for('pricing') }}" class="btn btn-outline-warning mt-auto btn-sm py-2">Upgrade</a>
+                {% endif %}
             </div>
         </div>
     </div>
     {% endfor %}
+
+    <!-- Premium Promo Card -->
+    <div class="col">
+        <div class="card text-center border-success h-100">
+            <div class="card-body d-flex flex-column">
+                <h5 class="text-success">🚀 {{ _("Premium Features") }}</h5>
+                <p class="flex-grow-1">{{ _("Cloud Sync, Advanced PDF, API, Support prioritaire") }}</p>
+                <a href="{{ url_for('pricing') }}" class="btn btn-success btn-sm mt-auto">👉 {{ _("Tarifs") }}</a>
+            </div>
+        </div>
+    </div>
 </div>
 
-<!-- Historique récent -->
+<!-- Historique -->
 {% if session.recent_calculations %}
 <div class="mt-5">
     <h5 class="text-primary">{% trans %}Letzte Berechnungen{% endtrans %}</h5>
@@ -35,18 +64,27 @@
             {% endfor %}
         </div>
         <div class="slider-nav">
-            <button onclick="scrollSlider(-200)"><</button>
-            <button onclick="scrollSlider(200)">></button>
+            <button onclick="scrollSlider(-200)">‹</button>
+            <button onclick="scrollSlider(200)">›</button>
         </div>
     </div>
 </div>
 {% endif %}
 
-<!-- Export PDF -->
-<div class="mt-3 mb-3 text-center">
-    <a href="{{ url_for('export_pdf') }}" class="btn btn-outline-success btn-lg">
+<div class="d-flex justify-content-center align-items-center flex-wrap mt-3 mb-3 gap-2">
+    <a href="{{ url_for('export_pdf') }}" class="btn btn-outline-secondary btn-sm">
         📄 {% trans %}Export PDF{% endtrans %}
     </a>
+
+    {% if current_user.plan == 'premium' %}
+    <button class="btn btn-success btn-sm" onclick="sendNotification()">
+        📧 {{ _("Envoyer notification") }}
+    </button>
+
+    <a href="mailto:support@xtoolav.com?subject=Support Premium" class="btn btn-info btn-sm">
+        🧑‍🔧 {{ _("Support prioritaire") }}
+    </a>
+    {% endif %}
 </div>
 
 {% endblock %}
@@ -54,15 +92,37 @@
 {% block scripts %}
 <script>
 function scrollSlider(amount) {
-    document.getElementById('recentSlider').scrollBy({
-        left: amount,
-        behavior: 'smooth'
+    document.getElementById('recentSlider').scrollBy({ left: amount, behavior: 'smooth' });
+}
+
+function sendNotification() {
+    fetch("{{ url_for('api_send_notification') }}", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            subject: "🔔 Rapport xtoolav",
+            message: "Votre dernier calcul est terminé. Voir en pièce jointe."
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.status === "ok") {
+            alert("📧 Notification envoyée avec succès !");
+        } else {
+            alert("❌ Erreur : " + data.message);
+        }
+    })
+    .catch(error => {
+        console.error("Erreur:", error);
+        alert("❌ Erreur réseau ou serveur.");
     });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     const slider = document.getElementById('recentSlider');
-    slider.scrollLeft = slider.scrollWidth; // Scroll vers le dernier
+    if (slider) slider.scrollLeft = slider.scrollWidth;
 });
 </script>
 {% endblock %}

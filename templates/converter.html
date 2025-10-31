@@ -13,7 +13,7 @@
     <!-- ONGLET NDI -->
     <div class="tab-pane active" id="ndi">
         <h5>NDI Bandbreite berechnen</h5>
-        <form method="POST" action="{{ url_for('converter') }}#ndi">
+        <form method="POST" action="{{ url_for('converter.index') }}#ndi">
             <input type="hidden" name="tool" value="ndi">
             <div class="mb-3">
                 <label class="form-label">{% trans %}Auflösung{% endtrans %}</label>
