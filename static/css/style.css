@@ -1,25 +1,87 @@
-/* Modern Professional Style for mttools */
+/* ========================================
+   XtoolAV – Style professionnel (Desktop-first)
+   Optimisé pour clarté, lisibilité et usage AV
+   ======================================== */
+
 :root {
-  --primary: #0056b3;
-  --primary-light: #007bff;
-  --dark: #212529;
-  --light: #f8f9fa;
+  --primary: #29313a;          /* Bleu professionnel (cohérent avec theme-color) */
+  --primary-dark: #03356e;
+  --dark: #212529;             /* Noir presque pur pour texte */
+  --light: #ffffff;
   --gray: #6c757d;
-  --success: #28a745;
-  --border: #dee2e6;
-  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --light-gray: #f8f9fa;
+  --border: #eaeaea;
+  --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+/* ---------- Base ---------- */
 body {
   font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-  background-color: #f5f7fa;
+  background-color: var(--light);
   color: var(--dark);
   line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  padding-top: 70px;
 }
 
-/* Navbar */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--dark);
+  font-weight: 600;
+}
+
+.text-muted {
+  color: var(--gray) !important;
+}
+/* ---------- Navbar professionnelle ---------- */
+.xtoolav-navbar {
+  background-color: #1a1a1a; /* Gris anthracite très foncé (pro, pas noir pur) */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  padding: 0.6rem 0;
+}
+
+.xtoolav-navbar .navbar-brand {
+  font-weight: 700;
+  font-size: 1.45rem;
+  color: #f0f0f0 !important; /* Blanc légèrement grisé pour douceur */
+}
+
+.xtoolav-navbar .navbar-brand img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1); /* Force le logo en blanc, même s'il est noir */
+}
+
+.xtoolav-navbar .nav-text,
+.xtoolav-navbar .nav-link {
+  color: #e0e0e0 !important;
+  font-size: 0.95rem;
+}
+
+.xtoolav-navbar .nav-link:hover,
+.xtoolav-navbar .nav-text:hover {
+  color: #ffffff !important;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.xtoolav-navbar .btn-outline-light {
+  border-color: #666;
+  color: #e0e0e0;
+  font-size: 0.85rem;
+}
+
+.xtoolav-navbar .btn-outline-light:hover {
+  background-color: #333;
+  border-color: #888;
+  color: white;
+}
+
+/* ---------- Navbar ---------- */
 .navbar {
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-light);
   border-bottom: 1px solid var(--border);
 }
 
@@ -28,41 +90,42 @@ body {
   font-size: 1.5rem;
 }
 
-/* Cards */
+/* ---------- Cards (Dashboard) ---------- */
 .card {
-  border: none;
+  background-color: var(--light);
+  border: 1px solid var(--border);
   border-radius: 12px;
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-light);
   transition: transform 0.2s, box-shadow 0.2s;
   overflow: hidden;
-  background-color: white;
 }
 
 .card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
 }
 
 .card-title {
+  color: var(--dark);
   font-weight: 600;
-  color: var(--primary);
 }
 
 .card-body {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .card-text {
-    flex-grow: 1;
+  flex-grow: 1;
+  color: var(--gray);
 }
 
+/* ---------- Buttons ---------- */
 .btn-sm {
-    padding: 0.25rem 0.5rem;
-    font-size: 0.875rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
 }
 
-/* Buttons */
 .btn-primary {
   background-color: var(--primary);
   border: none;
@@ -70,20 +133,29 @@ body {
 }
 
 .btn-primary:hover {
-  background-color: var(--primary-light);
+  background-color: var(--primary-dark);
 }
 
 .btn-outline-secondary {
-  color: var(--primary);
-  border-color: var(--primary);
+  color: var(--dark);
+  border-color: var(--gray);
 }
 
 .btn-outline-secondary:hover {
   background-color: var(--primary);
   color: white;
+  border-color: var(--primary);
 }
 
-/* Recent Calculations Slider */
+/* ---------- Liens externes ---------- */
+.external-link::after {
+  content: "↗";
+  font-size: 0.7em;
+  margin-left: 4px;
+  opacity: 0.7;
+}
+
+/* ---------- Recent Calculations Slider ---------- */
 .recent-slider-container {
   position: relative;
   margin: 20px 0;
@@ -118,15 +190,16 @@ body {
   min-width: 280px;
   max-width: 300px;
   padding: 12px 16px;
-  background: white;
+  background: var(--light);
   border: 1px solid var(--border);
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   font-size: 0.95rem;
+  color: var(--dark);
 }
 
 .recent-slide strong {
-  color: var(--primary);
+  color: var(--dark);
   font-size: 1rem;
 }
 
@@ -161,10 +234,12 @@ body {
   border-color: var(--primary);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* ---------- Responsive (mobile-friendly, mais desktop-first) ---------- */
+@media (max-width: 576px) {
   .recent-slide {
     min-width: 240px;
     padding: 10px;
   }
 }
+
+/* Fin du fichier */
