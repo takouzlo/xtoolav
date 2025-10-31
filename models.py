@@ -10,6 +10,9 @@ class User(UserMixin, db.Model):
     email = db.Column(db.String(120), unique=True, nullable=False)
     password_hash = db.Column(db.String(200), nullable=False)
     language = db.Column(db.String(2), default='de')  # de=allemand, fr=français
+    plan = db.Column(db.String(10), default='free')
+    stripe_customer_id = db.Column(db.String(100), nullable=True)
+    subscription_id = db.Column(db.String(100), nullable=True)
 
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
