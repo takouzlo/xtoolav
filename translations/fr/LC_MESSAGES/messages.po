@@ -942,7 +942,7 @@ msgid "Hinweise:"
 msgstr "Remarques :"
 
 #: templates/dashboard.html:4
-msgid "Willkommen bei mttools"
+msgid "Willkommen bei xtoolav"
 msgstr "Bienvenue sur xtoolav"
 
 #: templates/dashboard.html:5
@@ -1364,4 +1364,336 @@ msgstr ""
 
 #~ msgid "Immer 20% Reserve einplanen"
 #~ msgstr "Prévoir toujours 20% de marge"
+
+msgid "Premium Features"
+msgstr "Fonctionnalités Premium"
+
+msgid "Cloud Sync, Advanced PDF, API, Support prioritaire"
+msgstr "Sync cloud, PDF avancés, API, support prioritaire"
+
+msgid "Tarifs"
+msgstr "Tarifs"
+
+msgid "xtoolav – Abonnement wählen"
+msgstr "xtoolav – Choisissez votre abonnement"
+
+msgid "Wählen Sie Ihren Plan – für Techniker, Teams und Unternehmen."
+msgstr "Choisissez votre plan – pour techniciens, équipes et entreprises."
+
+msgid "Free"
+msgstr "Free"
+
+msgid "Basic"
+msgstr "Basic"
+
+msgid "Premium"
+msgstr "Premium"
+
+msgid "/Monat"
+msgstr "/mois"
+
+msgid "Für Einzeltechniker"
+msgstr "Pour les techniciens individuels"
+
+msgid "Für kleine Teams"
+msgstr "Pour les petites équipes"
+
+msgid "Für Firmen & AV-Dienstleister"
+msgstr "Pour les entreprises et les prestataires audiovisuels"
+
+msgid "Alle Grundrechner"
+msgstr "Toutes les calculatrices de base"
+
+msgid "Netzwerktest & Scanner"
+msgstr "Test réseau et scanner"
+
+msgid "Lokaler Historie"
+msgstr "Histoire locale"
+
+msgid "Kein Cloud-Sync"
+msgstr "Pas de synchronisation dans le cloud"
+
+msgid "Keine erweiterten PDFs"
+msgstr "Pas de PDF enrichis"
+
+msgid "Cloud-Synchronisation"
+msgstr "Synchronisation dans le cloud"
+
+msgid "Erweiterte PDF-Berichte"
+msgstr "Rapports PDF avancés"
+
+msgid "API-Zugriff"
+msgstr "Accès API"
+
+msgid "Support prioritaire"
+msgstr "Assistance prioritaire"
+
+msgid "Multi-Nutzer-Unterstützung"
+msgstr "Prise en charge multi-utilisateurs"
+
+msgid "Dante Pro Assistant"
+msgstr "Assistant Dante Pro"
+
+msgid "Dashboard Admin"
+msgstr "Administration du tableau de bord"
+
+# Authentification
+msgid "Bitte melden Sie sich an, um fortzufahren."
+msgstr "Veuillez vous connecter pour continuer."
+
+msgid "Benutzername oder Passwort falsch."
+msgstr "Nom d'utilisateur ou mot de passe incorrect."
+
+msgid "Erfolgreich eingeloggt!"
+msgstr "Connecté avec succès !"
+
+msgid "Registrierung erfolgreich! Sie können sich jetzt anmelden."
+msgstr "Inscription réussie ! Vous pouvez maintenant vous connecter."
+
+msgid "Benutzername bereits vergeben."
+msgstr "Nom d'utilisateur déjà pris."
+
+msgid "E-Mail bereits registriert."
+msgstr "Adresse e-mail déjà enregistrée."
+
+msgid "Sie wurden erfolgreich abgemeldet."
+msgstr "Vous avez été déconnecté avec succès."
+
+msgid "Anmelden"
+msgstr "Se connecter"
+
+msgid "Registrieren"
+msgstr "S'inscrire"
+
+msgid "Benutzername"
+msgstr "Nom d'utilisateur"
+
+msgid "Passwort"
+msgstr "Mot de passe"
+
+msgid "Login"
+msgstr "Connexion"
+
+# Dashboard
+msgid "Dashboard"
+msgstr "Tableau de bord"
+
+msgid "Konverter"
+msgstr "Convertisseur"
+
+msgid "Auflösungen, Kabel, NDI-Bandbreite"
+msgstr "Résolutions, câbles, bande passante NDI"
+
+msgid "Audio-Rechner"
+msgstr "Calculateur audio"
+
+msgid "dB, Lautstärke, Empfindlichkeit"
+msgstr "dB, volume, sensibilité"
+
+msgid "Stromrechner"
+msgstr "Calculateur électrique"
+
+msgid "Strom, Sicherung, Kabelquerschnitt"
+msgstr "Courant, fusible, section de câble"
+
+msgid "PoE-Rechner"
+msgstr "Calculateur PoE"
+
+msgid "Power over Ethernet (Kamera, Telefon)"
+msgstr "Alimentation par Ethernet (caméra, téléphone)"
+
+msgid "Sichtabstand"
+msgstr "Distance de vision"
+
+msgid "Optimale Distanz für 1080p, 4K, 8K"
+msgstr "Distance optimale pour 1080p, 4K, 8K"
+
+msgid "Bilddiagonalen"
+msgstr "Diagonales d'écran"
+
+msgid "Umrechnung cm/Zoll, Breite/Höhe"
+msgstr "Conversion cm/pouces, largeur/hauteur"
+
+msgid "Netzwerktest"
+msgstr "Test réseau"
+
+msgid "Ping und Port-Prüfung"
+msgstr "Ping et vérification de port"
+
+msgid "UHF"
+msgstr "UHF"
+
+msgid "Kanäle für kabellose Mikrofone"
+msgstr "Canaux pour micros sans fil"
+
+msgid "Projektion"
+msgstr "Projection"
+
+msgid "Projektionsdistanz berechnen"
+msgstr "Calculer la distance de projection"
+
+msgid "dBu/dBV"
+msgstr "dBu/dBV"
+
+msgid "Audio-Niveau-Konvertierung"
+msgstr "Conversion de niveau audio"
+
+msgid "Wärme"
+msgstr "Chaleur"
+
+msgid "Wärmeabgabe von Geräten"
+msgstr "Dissipation thermique des appareils"
+
+msgid "Netzwerk-Scanner"
+msgstr "Analyseur de réseau"
+
+msgid "IP, MAC, Hostname finden"
+msgstr "Trouver IP, MAC, nom d'hôte"
+
+msgid "ASCII-Decodierer"
+msgstr "Décodeur ASCII"
+
+msgid "DEC, HEX, OCT, HTML Entity"
+msgstr "Décimal, Hexadécimal, Octal, Entité HTML"
+
+msgid "Erweiterter Bericht - xtoolav"
+msgstr "Rapport avancé - xtoolav"
+
+msgid "Technische Konfiguration"
+msgstr "Configuration technique"
+
+msgid "Letzte Berechnungen"
+msgstr "Derniers calculs"
+
+msgid "Typ"
+msgstr "Type"
+
+msgid "Eingabe"
+msgstr "Entrée"
+
+msgid "Ergebnis"
+msgstr "Résultat"
+
+msgid "Zeit"
+msgstr "Heure"
+
+msgid "Freemium AV Tool"
+msgstr "Outil AV Freemium"
+
+# PDF Export
+msgid "Fehler beim PDF-Export: "
+msgstr "Erreur lors de l'export PDF : "
+
+msgid "PDF exporté avec succès"
+msgstr "PDF exporté avec succès"
+
+# Plans Freemium
+msgid "xtoolav – Abonnement wählen"
+msgstr "xtoolav – Choisissez votre abonnement"
+
+msgid "Wählen Sie Ihren Plan – für Techniker, Teams und Unternehmen."
+msgstr "Choisissez votre plan – pour techniciens, équipes et entreprises."
+
+msgid "Free"
+msgstr "Gratuit"
+
+msgid "Basic"
+msgstr "Basique"
+
+msgid "Premium"
+msgstr "Premium"
+
+msgid "/Monat"
+msgstr "/mois"
+
+msgid "Für Einzeltechniker"
+msgstr "Pour techniciens individuels"
+
+msgid "Für kleine Teams"
+msgstr "Pour petites équipes"
+
+msgid "Für Firmen & AV-Dienstleister"
+msgstr "Pour entreprises et prestataires AV"
+
+msgid "Alle Grundrechner"
+msgstr "Tous les calculateurs de base"
+
+msgid "Netzwerktest & Scanner"
+msgstr "Test réseau & analyseur"
+
+msgid "Lokaler Historie"
+msgstr "Historique local"
+
+msgid "Kein Cloud-Sync"
+msgstr "Pas de synchronisation cloud"
+
+msgid "Keine erweiterten PDFs"
+msgstr "Pas de PDF avancés"
+
+msgid "Alles aus Free"
+msgstr "Tout inclus dans Gratuit"
+
+msgid "Cloud-Synchronisation"
+msgstr "Synchronisation cloud"
+
+msgid "Erweiterte PDF-Berichte"
+msgstr "Rapports PDF avancés"
+
+msgid "API-Zugriff"
+msgstr "Accès API"
+
+msgid "Support prioritaire"
+msgstr "Support prioritaire"
+
+msgid "Multi-Nutzer-Unterstützung"
+msgstr "Support multi-utilisateurs"
+
+msgid "Dante Pro Assistant"
+msgstr "Assistant Dante Pro"
+
+msgid "Dashboard Admin"
+msgstr "Tableau de bord administrateur"
+
+msgid "Sie nutzen derzeit den Free-Plan. Nach dem Upgrade werden neue Funktionen automatisch freigeschaltet."
+msgstr "Vous utilisez actuellement le plan Gratuit. Après mise à niveau, de nouvelles fonctionnalités seront activées automatiquement."
+
+msgid "Starten"
+msgstr "Commencer"
+
+msgid "Aktuell"
+msgstr "Actuel"
+
+msgid "Upgrade"
+msgstr "Mettre à niveau"
+
+msgid "Abonnement Basic erforderlich"
+msgstr "Abonnement Basique requis"
+
+msgid "Abonnement Premium erforderlich"
+msgstr "Abonnement Premium requis"
+
+msgid "Vielen Dank! Ihr Abonnement wurde aktiviert."
+msgstr "Merci ! Votre abonnement a été activé."
+
+msgid "Tarifs"
+msgstr "Tarifs"
+
+msgid "Sprache auf {lang} geändert"
+msgstr "Langue changée sur {lang}"
+
+msgid "Deutsch"
+msgstr "Allemand"
+
+msgid "Français"
+msgstr "Français"
+
+msgid "Plan"
+msgstr "Plan"
+
+# Erreurs
+msgid "Fehler bei der Berechnung"
+msgstr "Erreur de calcul"
+
+msgid "Bitte Netzwerk auswählen oder eingeben."
+msgstr "Veuillez sélectionner ou entrer un réseau."
 

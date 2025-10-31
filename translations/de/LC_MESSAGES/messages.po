@@ -1357,3 +1357,146 @@ msgstr ""
 #~ msgid "Immer 20% Reserve einplanen"
 #~ msgstr "Immer 20% Reserve einplanen"
 
+msgid "Premium Features"
+msgstr "Premium-Funktionen"
+
+msgid "Cloud Sync, Advanced PDF, API, Support prioritaire"
+msgstr "Cloud-Sync, erweiterte PDFs, API, Support prioritaire"
+
+msgid "Tarifs"
+msgstr "Preise"
+
+msgid "xtoolav – Abonnement wählen"
+msgstr "xtoolav – Wählen Sie Ihren Plan"
+
+msgid "Wählen Sie Ihren Plan – für Techniker, Teams und Unternehmen."
+msgstr "Wählen Sie Ihren Plan – für Techniker, Teams und Unternehmen."
+
+msgid "Free"
+msgstr "Free"
+
+msgid "Basic"
+msgstr "Basic"
+
+msgid "Premium"
+msgstr "Premium"
+
+msgid "/Monat"
+msgstr "/Monat"
+
+msgid "Für Einzeltechniker"
+msgstr "Für Einzeltechniker"
+
+msgid "Für kleine Teams"
+msgstr "Für kleine Teams"
+
+msgid "Für Firmen & AV-Dienstleister"
+msgstr "Für Firmen & AV-Dienstleister"
+
+msgid "Alle Grundrechner"
+msgstr "Alle Grundrechner"
+
+msgid "Netzwerktest & Scanner"
+msgstr "Netzwerktest & Scanner"
+
+msgid "Lokaler Historie"
+msgstr "Lokaler Historie"
+
+msgid "Kein Cloud-Sync"
+msgstr "Kein Cloud-Sync"
+
+msgid "Keine erweiterten PDFs"
+msgstr "Keine erweiterten PDFs"
+
+msgid "Cloud-Synchronisation"
+msgstr "Cloud-Synchronisation"
+
+msgid "Erweiterte PDF-Berichte"
+msgstr "Erweiterte PDF-Berichte"
+
+msgid "API-Zugriff"
+msgstr "API-Zugriff"
+
+msgid "Support prioritaire"
+msgstr "Prioritärer Support"
+
+msgid "Multi-Nutzer-Unterstützung"
+msgstr "Multi-Nutzer-Unterstützung"
+
+msgid "Dante Pro Assistant"
+msgstr "Dante Pro Assistant"
+
+msgid "Dashboard Admin"
+msgstr "Dashboard Admin"
+
+msgid "xtoolav – Abonnement wählen"
+msgstr "xtoolav – Wählen Sie Ihren Plan"
+
+msgid "Wählen Sie Ihren Plan – für Techniker, Teams und Unternehmen."
+msgstr "Wählen Sie Ihren Plan – für Techniker, Teams und Unternehmen."
+
+msgid "Free"
+msgstr "Free"
+
+msgid "Basic"
+msgstr "Basic"
+
+msgid "Premium"
+msgstr "Premium"
+
+msgid "/Monat"
+msgstr "/Monat"
+
+msgid "Für Einzeltechniker"
+msgstr "Für Einzeltechniker"
+
+msgid "Für kleine Teams"
+msgstr "Für kleine Teams"
+
+msgid "Für Firmen & AV-Dienstleister"
+msgstr "Für Firmen & AV-Dienstleister"
+
+msgid "Alle Grundrechner"
+msgstr "Alle Grundrechner"
+
+msgid "Netzwerktest & Scanner"
+msgstr "Netzwerktest & Scanner"
+
+msgid "Lokaler Historie"
+msgstr "Lokaler Historie"
+
+msgid "Kein Cloud-Sync"
+msgstr "Kein Cloud-Sync"
+
+msgid "Keine erweiterten PDFs"
+msgstr "Keine erweiterten PDFs"
+
+msgid "Alles aus Free"
+msgstr "Alles aus Free"
+
+msgid "Cloud-Synchronisation"
+msgstr "Cloud-Synchronisation"
+
+msgid "Erweiterte PDF-Berichte"
+msgstr "Erweiterte PDF-Berichte"
+
+msgid "API-Zugriff"
+msgstr "API-Zugriff"
+
+msgid "Support prioritaire"
+msgstr "Prioritätssupport"
+
+msgid "Multi-Nutzer-Unterstützung"
+msgstr "Multi-Nutzer-Unterstützung"
+
+msgid "Dante Pro Assistant"
+msgstr "Dante Pro Assistant"
+
+msgid "Dashboard Admin"
+msgstr "Dashboard Admin"
+
+msgid "Sie nutzen derzeit den Free-Plan. Nach dem Upgrade werden neue Funktionen automatisch freigeschaltet."
+msgstr "Sie nutzen derzeit den Free-Plan. Nach dem Upgrade werden neue Funktionen automatisch freigeschaltet."
+
+msgid "Starten"
+msgstr "Starten"
