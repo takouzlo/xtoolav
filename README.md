@@ -99,7 +99,9 @@ Elle regroupe tous les outils essentiels en un seul endroit, **multilingue**, **
 Téléchargez `xtoolav.exe` dans [releases/](releases/)
 
 ### 🧑‍💻 Développement local
+
 ```bash
+
     git clone https://github.com/takouzlo/xtoolav.git
 
     cd xtoolav
