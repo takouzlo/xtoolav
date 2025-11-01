@@ -100,8 +100,6 @@ Téléchargez `xtoolav.exe` dans [releases/](releases/)
 
 ### 🧑‍💻 Développement local
 
-```bash
-
     git clone https://github.com/takouzlo/xtoolav.git
 
     cd xtoolav
