@@ -100,12 +100,12 @@ Téléchargez `xtoolav.exe` dans [releases/](releases/)
 
 ### 🧑‍💻 Développement local
 ```bash
-git clone https://github.com/takouzlo/xtoolav.git
+    git clone https://github.com/takouzlo/xtoolav.git
 
-cd xtoolav
+    cd xtoolav
 
-pip install -r requirements.txt
+    pip install -r requirements.txt
 
-python app.py
+    python app.py
 
 
